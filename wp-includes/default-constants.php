@@ -36,9 +36,9 @@ function wp_initial_constants() {
 		if ( false === wp_is_ini_value_changeable( 'memory_limit' ) ) {
 			define( 'WP_MEMORY_LIMIT', $current_limit );
 		} elseif ( is_multisite() ) {
-			define( 'WP_MEMORY_LIMIT', '64M' );
+			define( 'WP_MEMORY_LIMIT', '256M' );
 		} else {
-			define( 'WP_MEMORY_LIMIT', '40M' );
+			define( 'WP_MEMORY_LIMIT', '256M' );
 		}
 	}
 

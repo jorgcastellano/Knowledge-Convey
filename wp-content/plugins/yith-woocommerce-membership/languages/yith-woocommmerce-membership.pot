@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Membership\n"
+"POT-Creation-Date: 2015-10-06 11:09+0100\n"
+"PO-Revision-Date: 2015-10-06 11:09+0100\n"
+"Last-Translator: \n"
+"Language-Team: Yithemes <plugins@yithemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../plugin-fw\n"
+
+#: ../class.yith-wcmbs-admin.php:181
+#: ../templates/metaboxes/restrict_access.php:9
+msgid "All Members"
+msgstr ""
+
+#: ../class.yith-wcmbs-admin.php:184
+msgid "All Non-Members"
+msgstr ""
+
+#: ../class.yith-wcmbs-admin.php:211 ../class.yith-wcmbs-admin.php:255
+msgid "Settings"
+msgstr ""
+
+#: ../class.yith-wcmbs-admin.php:233
+msgid "Plugin Documentation"
+msgstr ""
+
+#: ../class.yith-wcmbs-admin.php:264
+msgctxt "plugin name in admin page title"
+msgid "Membership"
+msgstr ""
+
+#: ../class.yith-wcmbs-admin.php:265
+msgctxt "plugin name in admin WP menu"
+msgid "Membership"
+msgstr ""
+
+#: ../class.yith-wcmbs-admin.php:294
+msgid "Allow access to"
+msgstr ""
+
+#: ../includes/class.ajax-products-field.php:116
+msgid "Search for a product..."
+msgstr ""
+
+#: ../includes/class.yith-wcmbs-membership.php:195
+msgid "Starting Date"
+msgstr ""
+
+#: ../includes/class.yith-wcmbs-membership.php:196
+msgid "Expiration Date"
+msgstr ""
+
+#: ../includes/class.yith-wcmbs-membership.php:214
+msgid "Active"
+msgstr ""
+
+#: ../includes/class.yith-wcmbs-membership.php:215
+msgid "Not Active"
+msgstr ""
+
+#: ../includes/class.yith-wcmbs-membership.php:216
+msgid "Expired"
+msgstr ""
+
+#: ../includes/class.yith-wcmbs-membership.php:217
+msgid "Cancelled"
+msgstr ""
+
+#: ../includes/class.yith-wcmbs-membership.php:222
+msgid "Status"
+msgstr ""
+
+#: ../init.php:43
+msgid ""
+"YITH WooCommerce Membership is enabled but not effective. It requires "
+"WooCommerce in order to work."
+msgstr ""
+
+#: ../init.php:52
+msgid ""
+"You can't activate the free version of YITH WooCommerce Membership while you "
+"are using the premium one."
+msgstr ""
+
+#: ../plugin-options/settings-options.php:8
+msgid "Plan Options"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:14
+msgid "Membership Name"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:16
+msgid "Write the name of the membership plan."
+msgstr ""
+
+#: ../plugin-options/settings-options.php:18
+msgctxt "Default value for Membership Plan Name"
+msgid "Membership"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:25
+msgid "Select Product"
+msgstr ""
+
+#: ../plugin-options/settings-options.php:28
+msgid ""
+"Select the product that users have to purchase to get a membership access"
+msgstr ""
+
+#: ../templates/metaboxes/restrict_access.php:8
+msgid "Everyone"
+msgstr ""
