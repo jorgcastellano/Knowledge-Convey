@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'knowledge-convey');
+define('DB_NAME', 'knowledgeconvey');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'knowledgeuser');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'jorgejac');
+define('DB_PASSWORD', 'knowledgeconvey_bd#');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
