@@ -92,6 +92,8 @@ if('on' == $barcode['display'] & defined('YITH_YWBC_PREMIUM') & !empty($barcode_
 
     #header_title .title-hover{
         position: absolute;
+        display: inline-block;
+        width: 70%;
         top: 1em;
         left: <?php echo $header_title_left;?>em;
         text-transform: uppercase;

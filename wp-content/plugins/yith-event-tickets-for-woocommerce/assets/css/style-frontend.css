@@ -4,7 +4,9 @@
     font-size: 0.9em;
 }
 .fields_panel{
-    margin-top: 1.5em;
+    margin-top: 0.5em;
+    float: left;
+    width: 100%;
 }
 .fields_rows {
     border-bottom: 1px solid #eee;

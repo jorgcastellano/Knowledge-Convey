@@ -8,7 +8,7 @@ Requires at least: 3.0
 Tested up to: 4.7.1
 WC requires at least: 2.0
 WC tested up to: 2.7
-Stable tag: 3.0.1
+Stable tag: 3.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
@@ -24,8 +24,6 @@ Latest version have been greatly improved for smoother and more speedy functioni
 We have added built-in plugin extension marketplace for more PRO level functions that not all might need but we think they are very useful. Please check full feature list below.
 
 [youtube https://www.youtube.com/watch?v=rlX8okqNfs4]
-
-
 
 We have worked on this plugin for last 3 years and so far it have been all free but in order for us to continue with this plugin development we had to move few of its’ features/extensions in to PRO(paid) version that is available for very generous price of $59 (+$20 for extended 12 month support) here: https://codecanyon.net/item/woocommerce-role-based-pricing-pro/14120734
 
@@ -178,6 +176,17 @@ Please open an issue at <a href="https://github.com/technofreaky/WooCommerce-Rol
 
 
 == Changelog ==
+
+= 3.0.3 [10-03-2017] =
+* Fixed : Variation Selectbox auto removed after selecting variations.
+* Tweaks : Changed Some Core Codes.
+
+= 3.0.2 [08-02-2017] =
+* Fixed : Tax Price issue in variable product. tax getting add 2 times in base price.
+* Tweaks : WC RBP Metabox Code Tweaked 
+* Tweaks : Improved WPML Integration 
+* Fixed  : Minor Issues
+* Tweaks : Minor Core Updates
 
 = 3.0.1 [26-01-2017] =
 * Fixed : Parse error: syntax error, unexpected '.', expecting ',' or ';' in ../includes/helpers/class-admin-notice.php on line 6 [https://wordpress.org/support/topic/output-error-after-update/]

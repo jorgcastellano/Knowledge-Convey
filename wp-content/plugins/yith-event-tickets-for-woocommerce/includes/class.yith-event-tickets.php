@@ -1,6 +1,6 @@
 <?php
 /*
- * This file belongs to the YIT Framework.
+ * This file belongs to the YITH Framework.
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * that is bundled with this package in the file LICENSE.txt.
@@ -16,7 +16,7 @@ if ( ! defined( 'YITH_WCEVTI_VERSION' ) ) {
  *
  * @class      YITH_Tickets
  * @package    Yithemes
- * @since      Version 2.0.0
+ * @since      Version 1.0.0
  * @author     Your Inspiration Themes
  *
  */
@@ -207,12 +207,10 @@ if ( ! class_exists( 'YITH_Tickets' ) ) {
 
             $args = array(
                 'labels'             => $labels,
-                'public'             => true,
+                'public'             => false,
                 'show_ui'            => true,
-                'show_in_menu'       => true,
                 'query_var'          => true,
                 'rewrite'            => array( 'slug' => 'order' ),
-                'has_archive'        => true,
                 'hierarchical'       => true,
                 'menu_position'      => null,
                 'supports'           => array(),
@@ -231,7 +229,6 @@ if ( ! class_exists( 'YITH_Tickets' ) ) {
 
         public function attach_items_pdf_mail($attachments, $email_id, $object){
             $allowed_emails = array('customer_processing_order', 'customer_completed_order');
-
             if(in_array($email_id, $allowed_emails) && is_a($object, 'WC_Order')){
                 $order_items = $object->get_items();
                 foreach ($order_items as $item){

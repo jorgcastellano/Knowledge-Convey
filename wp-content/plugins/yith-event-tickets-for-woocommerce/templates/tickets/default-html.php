@@ -45,16 +45,17 @@
                     </div>
                     <?php
                 }
+                $formated_price_service =  sprintf( get_woocommerce_price_format(),  get_woocommerce_currency_symbol() , $price );
                 ?>
                 <div id="content_price">
                     <p class="form-field">
                         <label for="_content_price"><?php echo __('Price', 'yith-event-tickets-for-woocommerce'); ?>: </label>
-                        <span id="_content_price"><?php echo esc_html($price)?></span>
+                        <span id="_content_price"><?php echo $formated_price_service?></span>
                     </p>
                 </div>
                 <div id="content_aditional">
                     <p>
-                        <?php echo esc_html($mail_template['data']['aditional_text'])?>
+                        <?php echo nl2br( esc_html($mail_template['data']['aditional_text'] ) );?>
                     </p>
                 </div>
                 <?php if(false != $barcode){

@@ -106,6 +106,31 @@
                     </p>
                     <?php
                     break;
+                case 'date':
+                    ?>
+                    <p class="form-field _fields_customer_<?php echo $label; ?>_field "><label
+                            for="_fields_customer_<?php echo $row ?>_<?php echo $label; ?>"><?php echo $field['_label']; ?><?php if (isset($field['_required'])) {
+                                if ('on' == $field['_required']) {
+                                    echo '*';
+                                }
+                            } ?></label>
+                        <input type="hidden" style=""
+                               name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_key]"
+                               value="<?php echo $label; ?>">
+                        <input type="hidden" style=""
+                               name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_label]"
+                               value="<?php echo $field['_label']; ?>">
+                        <input type="date" class="_field_item" style=""
+                               name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_value]"
+                               id="_fields_customer_<?php echo $row ?>_<?php echo $label; ?>"
+                               value="" placeholder="dd/mm/aaaa" <?php if (isset($field['_required'])) {
+                            if ('on' == $field['_required']) {
+                                echo 'required';
+                            }
+                        } ?>>
+                    </p>
+                    <?php
+                    break;
             }
         }
     }

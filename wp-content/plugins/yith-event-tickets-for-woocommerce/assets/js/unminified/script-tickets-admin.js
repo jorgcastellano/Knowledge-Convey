@@ -482,6 +482,16 @@ jQuery(document).ready(function($){
 
             }
         } );
+        $('#_direction_event_field').on('change', function () {
+            if( 0 == $(this).val().length ){
+                $('#_display_map_tab').prop('checked', false);
+                $('#_display_map_tab').prop('disabled', true);
+
+            } else {
+                $('#_display_map_tab').prop('disabled', false);
+            }
+        });
+        $('#_direction_event_field').trigger('change');
     }
 
     function load_map_address( divMap, latlng ) {

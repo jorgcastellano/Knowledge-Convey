@@ -41,14 +41,15 @@ if ( ! class_exists( 'WC_Product_Ticket_Event' ) ) {
             /* === Here create my Event product extending WC_Product_Simple === */
 
             parent::__construct($product);
-            $this->product_type = 'ticket-event';
+            yit_set_prop($this, 'product_type', $this->get_type());
+
             $this->supports[] = 'add_to_cart';
 
             $item = array_diff( $this->supports, array( 'add_to_cart' ));
             unset($this->supports[ key($item)]);
 
-            $this->price = (double) parent::get_price() + $this->get_stock_overcharge() + $this->get_time_overcharge();
-
+            $price = (double) parent::get_price() + $this->get_stock_overcharge() + $this->get_time_overcharge();
+            yit_set_prop($this, 'price', $price);
         }
 
         /**
@@ -57,7 +58,7 @@ if ( ! class_exists( 'WC_Product_Ticket_Event' ) ) {
          * @return double price
          * @overwrite
          */
-        public function get_price() {
+        public function get_price($context = 'view') {
             return (double) parent::get_price(); // + $this->get_stock_overcharge() + $this->get_time_overcharge();
         }
 
@@ -66,9 +67,13 @@ if ( ! class_exists( 'WC_Product_Ticket_Event' ) ) {
          */
         public function get_stock_overcharge()
         {
-            $increase_by_stock = get_post_meta( $this->id, '_increase_by_stock', true );
+            $increase_by_stock = yit_get_prop( $this, '_increase_by_stock', true );
             $increase_value = 0;
-            if ( 'yes' === get_post_meta( $this->id, '_manage_stock', true ) ) {
+
+            $manage_stock = yit_get_prop( $this, '_manage_stock', true );
+            $stock_enable = gettype($manage_stock) == 'string' ? ( 'yes' == $manage_stock) ? true : false: $manage_stock;
+
+            if ( $stock_enable) {
                 $current_stock = $this->get_stock_quantity();
                 $increase_value = $this->get_overcharge($increase_by_stock, $current_stock);
             }
@@ -80,8 +85,8 @@ if ( ! class_exists( 'WC_Product_Ticket_Event' ) ) {
          */
         public function get_time_overcharge()
         {
-            $increase_by_time = get_post_meta( $this->id, '_increase_by_time', true );
-            $start_event_date = get_post_meta( $this->id, '_start_date_picker', true );
+            $increase_by_time = yit_get_prop( $this, '_increase_by_time', true );
+            $start_event_date = yit_get_prop( $this, '_start_date_picker', true );
             $start_event_timestamp = strtotime( $start_event_date );
             $current_timestamp = time();
 
@@ -131,6 +136,7 @@ if ( ! class_exists( 'WC_Product_Ticket_Event' ) ) {
                 $increase_value = $current_rule['_increase_fixed_amount'];
             }
             if ('percentage' == $current_rule['_increase_ticket_event_type']) {
+                $current_rule['_increase_percentage_amount'] = floatval($current_rule['_increase_percentage_amount']);
                 if (100 >= $current_rule['_increase_percentage_amount']) {
                     $increase_value = (parent::get_price() * $current_rule['_increase_percentage_amount']) / 100;
                 }
@@ -143,8 +149,15 @@ if ( ! class_exists( 'WC_Product_Ticket_Event' ) ) {
          */
         public function add_to_cart_url()
         {
-            return apply_filters( 'woocommerce_product_add_to_cart_url', get_permalink( $this->id ), $this );
+            return apply_filters( 'woocommerce_product_add_to_cart_url', get_permalink( $this->get_id() ), $this );
         }
 
+        /**
+         * Get internal type.
+         * @return string
+         */
+        public function get_type() {
+            return 'ticket-event';
+        }
     }
 }

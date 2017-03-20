@@ -3,7 +3,7 @@
 Plugin Name: Tawk.to Live Chat
 Plugin URI: https://tawk.to
 Description: Embeds Tawk.to live chat widget to your site
-Version: 0.2.2
+Version: 0.2.5
 Author: Tawkto
 */
 if(!class_exists('TawkTo_Settings')){
@@ -24,7 +24,9 @@ if(!class_exists('TawkTo_Settings')){
 				'show_ontagpage' => 0,
 				'show_onarticlepages' => 0,
 				'exclude_url' => 0,
-				'excluded_url_list' => ''
+				'excluded_url_list' => '',
+				'include_url' => 0,
+				'included_url_list' => ''
 			);
 			update_option( 'tawkto-visibility-options', $visibility);
 			}
@@ -33,20 +35,7 @@ if(!class_exists('TawkTo_Settings')){
 			add_action('admin_menu', array(&$this, 'add_menu'));
 			add_action('wp_ajax_tawkto_setwidget',  array(&$this, 'action_setwidget'));
 			add_action('wp_ajax_tawkto_removewidget',  array(&$this, 'action_removewidget'));
-
-			add_action('init', array(&$this, 'start_session'), 1);
-			add_action('wp_logout', array(&$this, 'end_session'));
-			add_action('wp_login', array(&$this, 'end_session'));
-		}
-
-		function start_session() {
-		    if(!session_id()) {
-		        session_start();
-		    }
-		}
-
-		function end_session() {
-		    session_destroy ();
+			add_action('admin_head', array(&$this,'tawk_custom_admin_style') );
 		}
 
 		public function admin_init(){
@@ -92,6 +81,8 @@ if(!class_exists('TawkTo_Settings')){
 			$input['show_onarticlepages'] = ($input['show_onarticlepages'] != '1')? 0 : 1;
 			$input['exclude_url'] = ($input['exclude_url'] != '1')? 0 : 1;
 			$input['excluded_url_list'] = sanitize_text_field($input['excluded_url_list']);
+			$input['include_url'] = ($input['include_url'] != '1')? 0 : 1;
+			$input['included_url_list'] = sanitize_text_field($input['included_url_list']);
 
 			return $input;
 		}
@@ -106,6 +97,17 @@ if(!class_exists('TawkTo_Settings')){
 			);
 		}
 
+		public function tawk_custom_admin_style(){
+			echo '<style>
+				    .form-table th.tawksetting {
+				      width: 350px;
+				    } 
+				    .tawknotice{
+				    	font-size:14px;
+				    }
+				  </style>';
+		}
+
 		public function create_plugin_settings_page(){
 
 			global $wpdb;
@@ -118,24 +120,11 @@ if(!class_exists('TawkTo_Settings')){
 			$widget_id = get_option(self::TAWK_WIDGET_ID_VARIABLE);
 			$base_url = 'https://plugins.tawk.to';
 
-			if(
-				isset($wpdb->blogid) &&
-				(
-					!isset($_SESSION['active_page']) ||
-					$_SESSION['active_page'] != $wpdb->blogid
-				)
-			) {
-				$_SESSION['active_page'] = $wpdb->blogid;
-				$iframe_url = $base_url.'/generic/logout'
+			$iframe_url = $base_url.'/generic/widgets'
 					.'?currentWidgetId='.$widget_id
 					.'&currentPageId='.$page_id
 					.'&transparentBackground=1';
-			}else{
-				$iframe_url = $base_url.'/generic/widgets'
-					.'?currentWidgetId='.$widget_id
-					.'&currentPageId='.$page_id
-					.'&transparentBackground=1';
-			}
+
 
 			include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
 		}
@@ -162,7 +151,9 @@ if(!class_exists('TawkTo')){
 				'show_ontagpage' => 0,
 				'show_onarticlepages' => 0,
 				'exclude_url' => 0,
-				'excluded_url_list' => ''
+				'excluded_url_list' => '',
+				'include_url' => 0,
+				'included_url_list' => ''
 			);
 
 			add_option(TawkTo_Settings::TAWK_PAGE_ID_VARIABLE, '', '', 'yes');
@@ -194,7 +185,7 @@ if(!class_exists('TawkTo')){
 		public function print_embed_code()
 		{
 			$vsibility = get_option( 'tawkto-visibility-options' );
-
+			
 			$display = FALSE;
 
 			if(($vsibility['show_onfrontpage'] == 1) && (is_home() || is_front_page()) ){ $display = TRUE; }
@@ -202,16 +193,49 @@ if(!class_exists('TawkTo')){
 			if(($vsibility['show_ontagpage'] == 1) && is_tag() ){ $display = TRUE; }
 			if($vsibility['always_display'] == 1){ $display = TRUE; }
 			if(($vsibility['show_onarticlepages'] == 1) && is_single() ){ $display = TRUE; }
+
 			if(($vsibility['exclude_url'] == 1)){
 				$excluded_url_list = $vsibility['excluded_url_list'];
+
 				$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 				$current_url = urldecode($current_url);
+
+				$ssl      = ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] == 'on' );
+			    $sp       = strtolower( $_SERVER['SERVER_PROTOCOL'] );
+			    $protocol = substr( $sp, 0, strpos( $sp, '/' ) ) . ( ( $ssl ) ? 's' : '' );
+
+			    $current_url = $protocol.'://'.$current_url;
+			    $current_url = strtolower($current_url);
+
 				$excluded_url_list = preg_split("/,/", $excluded_url_list);
 				foreach($excluded_url_list as $exclude_url)
 				{
-					$exclude_url = urldecode(trim($exclude_url));
+					$exclude_url = strtolower(urldecode(trim($exclude_url)));
+					
 					if (strpos($current_url, $exclude_url) !== false) {
 							$display = false;
+					}
+				}
+			}
+
+			if(isset($vsibility['include_url']) && $vsibility['include_url'] == 1){
+				$included_url_list = $vsibility['included_url_list'];
+				$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+				$current_url = urldecode($current_url);
+
+				$ssl      = ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] == 'on' );
+			    $sp       = strtolower( $_SERVER['SERVER_PROTOCOL'] );
+			    $protocol = substr( $sp, 0, strpos( $sp, '/' ) ) . ( ( $ssl ) ? 's' : '' );
+
+			    $current_url = $protocol.'://'.$current_url;
+			    $current_url = strtolower($current_url);
+
+				$included_url_list = preg_split("/,/", $included_url_list);
+				foreach($included_url_list as $include_url)
+				{
+					$include_url = strtolower(urldecode(trim($include_url)));
+					if (strpos($current_url, $include_url) !== false) {
+							$display = TRUE;
 					}
 				}
 			}

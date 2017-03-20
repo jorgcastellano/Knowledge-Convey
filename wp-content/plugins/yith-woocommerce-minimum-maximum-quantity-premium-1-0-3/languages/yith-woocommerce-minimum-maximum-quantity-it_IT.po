@@ -1,0 +1,1176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Minimum Maximum Quantity\n"
+"POT-Creation-Date: 2015-09-25 10:51+0200\n"
+"PO-Revision-Date: 2015-09-25 10:51+0200\n"
+"Last-Translator: \n"
+"Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../plugin-fw\n"
+
+#: ../class.yith-wc-min-max-qty-premium.php:172
+msgid "Placeholder reference"
+msgstr "Riferimenti segnaposto"
+
+#: ../class.yith-wc-min-max-qty-premium.php:176
+msgid "For further information"
+msgstr "Per ulteriori informazioni"
+
+#: ../class.yith-wc-min-max-qty-premium.php:177
+#: ../class.yith-wc-min-max-qty.php:503
+msgid "Plugin Documentation"
+msgstr "Documentazione plugin"
+
+#: ../class.yith-wc-min-max-qty-premium.php:186
+msgid "Replaced with not reached or exceeded quantity or spend restriction."
+msgstr ""
+"Inserisce la limitazione su quantità o spesa non sufficiente o superiore."
+
+#: ../class.yith-wc-min-max-qty-premium.php:194
+msgid "Replaced with cart quantity."
+msgstr "Inserisce la quantità carrello."
+
+#: ../class.yith-wc-min-max-qty-premium.php:202
+msgid "Replaced with cart value."
+msgstr "Inserisce il valore del carrello."
+
+#: ../class.yith-wc-min-max-qty-premium.php:210
+msgid "Replaced with product name."
+msgstr "Inserisce il nome del prodotto."
+
+#: ../class.yith-wc-min-max-qty-premium.php:218
+msgid "Replaced with category name."
+msgstr "Inserisce il nome della categoria."
+
+#: ../class.yith-wc-min-max-qty-premium.php:226
+msgid "Replaced with tag name."
+msgstr "Inserisce il nome del tag."
+
+#: ../class.yith-wc-min-max-qty-premium.php:234
+msgid "Replaced with active rules."
+msgstr "Inserisce le regole attive."
+
+#: ../class.yith-wc-min-max-qty-premium.php:254
+#: ../templates/admin/ywmmq-products-bulk-ops.php:468
+msgid "Products"
+msgstr "Prodotti"
+
+#: ../class.yith-wc-min-max-qty-premium.php:255
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:548
+msgid "Categories"
+msgstr "Categorie"
+
+#: ../class.yith-wc-min-max-qty-premium.php:256
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:548
+msgid "Tags"
+msgstr "Tag"
+
+#: ../class.yith-wc-min-max-qty-premium.php:320
+msgctxt "plugin name in product edit tab"
+msgid "Minimum Maximum Quantity"
+msgstr "Quantità minima e massima"
+
+#: ../class.yith-wc-min-max-qty-premium.php:351
+#: ../templates/admin/ywmmq-products-bulk-ops.php:341
+msgid "Exclude product"
+msgstr "Escludi prodotti"
+
+#: ../class.yith-wc-min-max-qty-premium.php:352
+msgid "Do not apply any of the plugin restrictions to this product"
+msgstr "Non applicare le restrizioni impostate dal plugin a questo prodotto"
+
+#: ../class.yith-wc-min-max-qty-premium.php:361
+#: ../templates/admin/ywmmq-products-bulk-ops.php:355
+msgid "Override product restrictions"
+msgstr "Sovrascrivi restrizioni prodotto"
+
+#: ../class.yith-wc-min-max-qty-premium.php:362
+msgid ""
+"Global product restrictions will be overridden by these ones. Set zero for "
+"no restrictions."
+msgstr ""
+"Le restrizioni prodotto globali verranno sovrascritte da quelle correnti. "
+"Imposta il valore zero per non applicare alcuna restrizione."
+
+#: ../class.yith-wc-min-max-qty-premium.php:373
+msgid "Enable variation restrictions"
+msgstr "Abilita restrizioni per variazione"
+
+#: ../class.yith-wc-min-max-qty-premium.php:374
+msgid ""
+"Set plugin restrictions for product variation instead of for the entire "
+"product."
+msgstr ""
+"Applica le restrizioni del plugin alla variazione prodotto invece che a "
+"tutto il prodotto."
+
+#: ../class.yith-wc-min-max-qty-premium.php:386
+#: ../class.yith-wc-min-max-qty-premium.php:477
+#: ../class.yith-wc-min-max-qty-premium.php:595
+#: ../class.yith-wc-min-max-qty-premium.php:747
+#: ../plugin-options/general-options.php:39
+#: ../plugin-options/premium-general-options.php:46
+#: ../plugin-options/premium-general-options.php:119
+#: ../plugin-options/premium-general-options.php:156
+#: ../plugin-options/premium-general-options.php:222
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:405
+#: ../templates/admin/ywmmq-products-bulk-ops.php:369
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:405
+msgid "Minimum quantity restriction"
+msgstr "Quantità massima"
+
+#: ../class.yith-wc-min-max-qty-premium.php:400
+#: ../class.yith-wc-min-max-qty-premium.php:492
+#: ../class.yith-wc-min-max-qty-premium.php:603
+#: ../class.yith-wc-min-max-qty-premium.php:756
+#: ../plugin-options/general-options.php:50
+#: ../plugin-options/premium-general-options.php:57
+#: ../plugin-options/premium-general-options.php:130
+#: ../plugin-options/premium-general-options.php:167
+#: ../plugin-options/premium-general-options.php:233
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:420
+#: ../templates/admin/ywmmq-products-bulk-ops.php:384
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:420
+msgid "Maximum quantity restriction"
+msgstr "Quantità minima"
+
+#: ../class.yith-wc-min-max-qty-premium.php:564
+#: ../plugin-options/premium-general-options.php:145
+msgid "Category restrictions"
+msgstr "Restrizioni per categoria"
+
+#: ../class.yith-wc-min-max-qty-premium.php:568
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:377
+msgid "Exclude category"
+msgstr "Escludi categoria"
+
+#: ../class.yith-wc-min-max-qty-premium.php:573
+msgid "Do not apply restrictions to product belonging to this category"
+msgstr "Non applicare restrizioni ai prodotti appartenenti a questa categoria"
+
+#: ../class.yith-wc-min-max-qty-premium.php:585
+#: ../class.yith-wc-min-max-qty-premium.php:737
+msgid "Override quantity restrictions"
+msgstr "Sovrascrivi restrizioni di quantità"
+
+#: ../class.yith-wc-min-max-qty-premium.php:590
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:400
+msgid ""
+"Global category quantity restrictions will be overridden by current ones. "
+"Set zero for no restrictions."
+msgstr ""
+"Le restrizioni di quantità per categoria saranno sovrascritte da quelle "
+"correnti. Imposta zero per non applicare restrizioni."
+
+#: ../class.yith-wc-min-max-qty-premium.php:622
+#: ../class.yith-wc-min-max-qty-premium.php:776
+msgid "Override spend restrictions"
+msgstr "Sovrascrivi restrizioni di spesa"
+
+#: ../class.yith-wc-min-max-qty-premium.php:627
+msgid ""
+"Global category spend restrictions will be overridden by current ones. Set "
+"zero for no restrictions."
+msgstr ""
+"Le restrizioni di spesa per categoria saranno sovrascritte da quelle "
+"correnti. Imposta zero per non applicare restrizioni."
+
+#: ../class.yith-wc-min-max-qty-premium.php:632
+#: ../class.yith-wc-min-max-qty-premium.php:786
+#: ../plugin-options/premium-general-options.php:75
+#: ../plugin-options/premium-general-options.php:185
+#: ../plugin-options/premium-general-options.php:251
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:449
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:449
+msgid "Minimum spend restriction"
+msgstr "Spesa minima"
+
+#: ../class.yith-wc-min-max-qty-premium.php:640
+#: ../class.yith-wc-min-max-qty-premium.php:795
+#: ../plugin-options/premium-general-options.php:86
+#: ../plugin-options/premium-general-options.php:196
+#: ../plugin-options/premium-general-options.php:262
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:464
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:464
+msgid "Maximum spend restriction"
+msgstr "Spesa massima"
+
+#: ../class.yith-wc-min-max-qty-premium.php:716
+#: ../plugin-options/premium-general-options.php:211
+msgid "Tag restrictions"
+msgstr "Restrizioni tag"
+
+#: ../class.yith-wc-min-max-qty-premium.php:720
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:377
+msgid "Exclude tag"
+msgstr "Escludi tag"
+
+#: ../class.yith-wc-min-max-qty-premium.php:725
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:386
+msgid "Do not apply restrictions to products with this tag"
+msgstr "Non applicare le restrizioni ai prodotti con questo tag"
+
+#: ../class.yith-wc-min-max-qty-premium.php:742
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:400
+msgid ""
+"Global tag quantity restrictions will be overridden by current ones. Set "
+"zero for no restrictions."
+msgstr ""
+"Le restrizioni di quantità per il tag saranno sovrascritte da quelle "
+"correnti. Imposta zero per non applicare restrizioni."
+
+#: ../class.yith-wc-min-max-qty-premium.php:781
+msgid ""
+"Global spend restrictions for tag will be overridden by current ones. Set "
+"zero for no restrictions."
+msgstr ""
+"Restrizioni di spesa per tag saranno sovrascritte da quelle correnti. "
+"Imposta zero per non applicare restrizioni."
+
+#: ../class.yith-wc-min-max-qty-premium.php:928
+#, php-format
+msgid ""
+"Items marked with %s do not contribute to reaching the purchase objective set"
+msgstr ""
+"Gli articoli contrassegnati con %s non contribuiscono al raggiungimento "
+"dell'obiettivo di acquisto selezionato"
+
+#: ../class.yith-wc-min-max-qty-premium.php:934
+#, php-format
+msgid "Check items marked with %s"
+msgstr "Spunta gli articoli contrassegnati con %s"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1012
+#, php-format
+msgid "Maximum quantity allowed for this product: %d"
+msgstr "Quantità massima consentita per questo prodotto: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1017
+#, php-format
+msgid "Minimum quantity required for this product: %d"
+msgstr "Quantità minima richiesta per questo prodotto: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1022
+#, php-format
+msgid "Quantities allowed for this product: minimum %d - maximum %d"
+msgstr "Quantità consentite per questo prodotto: minima %d - massima %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1032
+#, php-format
+msgid "Cart can contain %d items at most."
+msgstr "Il carrello può contenere un massimo di %d articoli."
+
+#: ../class.yith-wc-min-max-qty-premium.php:1037
+#, php-format
+msgid "Cart must contain %d items at least."
+msgstr "Il carrello deve contenere almeno %d articoli."
+
+#: ../class.yith-wc-min-max-qty-premium.php:1042
+#, php-format
+msgid "Cart must contain at least %d items but no more than %d"
+msgstr "Il carrello deve contenere almeno %d articoli ma non più di %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1053
+#, php-format
+msgid "Cart can contain no more than %s items."
+msgstr "Il carrello non può contenere più di %s articoli."
+
+#: ../class.yith-wc-min-max-qty-premium.php:1058
+#, php-format
+msgid "Cart must contain %s items at least"
+msgstr "Il carrello deve contenere almeno %s articoli."
+
+#: ../class.yith-wc-min-max-qty-premium.php:1063
+#, php-format
+msgid "Cart must contain at least %s items but no more than %s"
+msgstr "Il carrello deve contenere almeno %s articoli, ma non più di %s."
+
+#: ../class.yith-wc-min-max-qty-premium.php:1085
+#, php-format
+msgid "Maximum quantity allowed for category %s: %d"
+msgstr "Quantità massima consentita per la categoria %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1090
+#, php-format
+msgid "Minimum quantity required for category %s: %d"
+msgstr "Quantità minima richiesta per la categoria %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1095
+#, php-format
+msgid "Quantities allowed for category %s: minimum %d - maximum %d"
+msgstr "Quantità consentite per la categoria %s: minima %d - massima %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1107
+#, php-format
+msgid "Maximum spend allowed for category %s: %d"
+msgstr "Spesa minima consentita per la categoria %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1112
+#, php-format
+msgid "Minimum spend required for category %s: %d"
+msgstr "Spesa minima richiesta per la categoria %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1117
+#, php-format
+msgid "Spend allowed for category %s: minimum %s - maximum %s"
+msgstr "Spesa consentita per la categoria %s: minima %s - massima %s"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1141
+#, php-format
+msgid "Maximum quantity allowed for tag %s: %d"
+msgstr "Quantità massima consentita per il tag %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1146
+#, php-format
+msgid "Minimum quantity required for tag %s: %d"
+msgstr "Quantità minima richiesta per il tag %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1151
+#, php-format
+msgid "Quantities allowed for tag %s: minimum %d - maximum %d"
+msgstr "Quantità consentite per il tag %s: minimo %d - massimo %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1163
+#, php-format
+msgid "Maximum spend allowed for tag %s: %d"
+msgstr "Spesa massima consentita per il tag %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1168
+#, php-format
+msgid "Minimum spend required for tag %s: %d"
+msgstr "Spesa minima richiesta per il tag %s: %d"
+
+#: ../class.yith-wc-min-max-qty-premium.php:1173
+#, php-format
+msgid "Spend allowed for tag %s: minimum %s - maximum %s"
+msgstr "Spesa consentita per il tag %s: minima %s - massima %s"
+
+#: ../class.yith-wc-min-max-qty.php:129 ../class.yith-wc-min-max-qty.php:135
+msgid "General Settings"
+msgstr "Impostazioni generali"
+
+#: ../class.yith-wc-min-max-qty.php:130
+msgid "Message Settings"
+msgstr "Impostazioni messaggi"
+
+#: ../class.yith-wc-min-max-qty.php:131
+msgid "Bulk Actions"
+msgstr "Azioni di gruppo"
+
+#: ../class.yith-wc-min-max-qty.php:132
+msgid "How To"
+msgstr "Come fare per"
+
+#: ../class.yith-wc-min-max-qty.php:136 ../class.yith-wc-min-max-qty.php:476
+msgid "Premium Version"
+msgstr "Versione premium"
+
+#: ../class.yith-wc-min-max-qty.php:142
+msgctxt "plugin name in admin page title"
+msgid "Minimum Maximum Quantity"
+msgstr "Minimum Maximum Quantity"
+
+#: ../class.yith-wc-min-max-qty.php:143
+msgctxt "plugin name in admin WP menu"
+msgid "Minimum Maximum Quantity"
+msgstr "Minimum Maximum Quantity"
+
+#: ../class.yith-wc-min-max-qty.php:345
+#, php-format
+msgid "Your cart must contain at least %s products."
+msgstr "Il tuo carrello deve contenere almeno %s prodotti."
+
+#: ../class.yith-wc-min-max-qty.php:357
+#, php-format
+msgid "Your cart cannot contain more than %s products."
+msgstr "Il tuo carrello non può contenere più di %s prodotti."
+
+#: ../class.yith-wc-min-max-qty.php:473
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: ../includes/class-ywmmq-error-messages-premium.php:97
+msgid "Shipping fees and related taxes excluded."
+msgstr "Spese di spedizione e relative tasse escluse."
+
+#: ../init.php:23
+msgid ""
+"YITH WooCommerce Minimum Maximum Quantity is enabled but not effective. It "
+"requires WooCommerce in order to work."
+msgstr ""
+"YITH WooCommerce Minimum Maximum Quantity è abilitato ma non in funzione. "
+"Devi aver installato WooCommerce perché questo possa funzionare "
+"correttamente."
+
+#: ../plugin-options/general-options.php:20
+#: ../plugin-options/premium-general-options.php:20
+msgid "Minimum Maximum Quantity settings"
+msgstr "Impostazioni di Minimum Maximum Quantity"
+
+#: ../plugin-options/general-options.php:24
+#: ../plugin-options/premium-general-options.php:24
+msgid "Enable YITH WooCommerce Minimum Maximum Quantity"
+msgstr "Abilita YITH WooCommerce Minimum Maximum Quantity"
+
+#: ../plugin-options/general-options.php:35
+#: ../plugin-options/premium-general-options.php:35
+msgid "Cart restrictions"
+msgstr "Restrizioni carrello"
+
+#: ../plugin-options/general-options.php:41
+#: ../plugin-options/premium-general-options.php:48
+#: ../plugin-options/premium-general-options.php:59
+#: ../plugin-options/premium-general-options.php:158
+#: ../plugin-options/premium-general-options.php:169
+#: ../plugin-options/premium-general-options.php:224
+#: ../plugin-options/premium-general-options.php:235
+msgid "Minimum number of items in cart. Set zero for no restrictions."
+msgstr ""
+"Numero minimo di articoli nel carrello. Seleziona zero per non applicare "
+"restrizioni."
+
+#: ../plugin-options/general-options.php:52
+msgid "Maximum number of items in cart. Set zero for no restrictions."
+msgstr ""
+"Numero massimo di articoli nel carrello. Seleziona zero per non applicare "
+"restrizioni."
+
+#: ../plugin-options/messages-options.php:21
+msgid "Allowed placeholders:"
+msgstr "Segnaposti:"
+
+#: ../plugin-options/messages-options.php:22
+msgid "More info"
+msgstr "Per saperne di più"
+
+#: ../plugin-options/messages-options.php:35
+msgid "Purchase rules"
+msgstr "Regole di acquisto"
+
+#: ../plugin-options/messages-options.php:39
+msgid "Show rules on product page"
+msgstr "Mostra regole nella pagina prodotto"
+
+#: ../plugin-options/messages-options.php:45
+msgid "Position in product page"
+msgstr "Posizione nella pagina prodotto"
+
+#: ../plugin-options/messages-options.php:49
+msgid "Set the position in product detail page where showing rules."
+msgstr ""
+"Seleziona la posizione in cui mostrare le regole all'interno della pagina "
+"dettaglio prodotto."
+
+#: ../plugin-options/messages-options.php:51
+msgid "Before title"
+msgstr "Prima del titolo"
+
+#: ../plugin-options/messages-options.php:52
+msgid "After price"
+msgstr "Dopo il prezzo"
+
+#: ../plugin-options/messages-options.php:53
+msgid "Before \"Add to cart\""
+msgstr "Prima del pulsante \"Aggiungi al carrello\""
+
+#: ../plugin-options/messages-options.php:54
+msgid "Before tabs"
+msgstr "Prima delle tab"
+
+#: ../plugin-options/messages-options.php:58
+msgid "Text before rules"
+msgstr "Testo prima delle regole"
+
+#: ../plugin-options/messages-options.php:60
+msgid "Explanatory text shown before purchase rules."
+msgstr "Testo descrittivo mostrato prima delle regole di acquisto."
+
+#: ../plugin-options/messages-options.php:62
+msgid "The following rules are working: {rules}"
+msgstr "Sono attive le seguenti regole: {rules}"
+
+#: ../plugin-options/messages-options.php:72
+msgid "Cart Page Error Messages"
+msgstr "Messaggi errore pagina carrello"
+
+#: ../plugin-options/messages-options.php:76
+#: ../plugin-options/messages-options.php:231
+msgid "Minimum cart quantity not reached"
+msgstr "Quantità minima carrello non raggiunta"
+
+#: ../plugin-options/messages-options.php:80
+msgid "Your cart must contain at least {limit} products."
+msgstr "Il tuo carrello deve contenere almeno {limit} prodotti."
+
+#: ../plugin-options/messages-options.php:86
+#: ../plugin-options/messages-options.php:241
+msgid "Maximum cart quantity exceeded"
+msgstr "Quantità massima carrello superata"
+
+#: ../plugin-options/messages-options.php:90
+msgid "Your cart cannot contain more than {limit} products."
+msgstr "Il tuo carrello non può contenere più di {limit} prodotti."
+
+#: ../plugin-options/messages-options.php:96
+#: ../plugin-options/messages-options.php:251
+msgid "Minimum cart spend not reached"
+msgstr "Spesa minima carrello non raggiunta"
+
+#: ../plugin-options/messages-options.php:100
+msgid "Your cart totals must be at least {limit}."
+msgstr "Il totale del tuo carrello deve raggiungere un minimo di {limit}"
+
+#: ../plugin-options/messages-options.php:106
+#: ../plugin-options/messages-options.php:261
+msgid "Maximum cart spend exceeded"
+msgstr "Spesa massima carrello superata"
+
+#: ../plugin-options/messages-options.php:110
+msgid "Your cart totals cannot exceed {limit}."
+msgstr "Il totale del tuo carrello non può superare {limit}"
+
+#: ../plugin-options/messages-options.php:116
+#: ../plugin-options/messages-options.php:271
+msgid "Minimum product quantity not reached"
+msgstr "Quantità minima prodotto non raggiunta"
+
+#: ../plugin-options/messages-options.php:120
+msgid "You must purchase at least {limit} units of {product_name}."
+msgstr "Devi acquistare almeno {limit} unità di {product_name}."
+
+#: ../plugin-options/messages-options.php:126
+#: ../plugin-options/messages-options.php:281
+msgid "Maximum product quantity exceeded"
+msgstr "Quantità massima prodotto superata"
+
+#: ../plugin-options/messages-options.php:130
+msgid "You cannot purchase more than {limit} units of {product_name}."
+msgstr "Non puoi acquistare più di {limit} unità di {product_name}."
+
+#: ../plugin-options/messages-options.php:136
+#: ../plugin-options/messages-options.php:291
+msgid "Minimum category quantity not reached"
+msgstr "Quantità minima per la categoria non raggiunta"
+
+#: ../plugin-options/messages-options.php:140
+msgid ""
+"Your cart must contain at least {limit} products belonging to category "
+"{category_name}."
+msgstr ""
+"Il tuo carrello deve contenere almeno {limit} prodotti appartenenti alla "
+"categoria {category_name}."
+
+#: ../plugin-options/messages-options.php:146
+#: ../plugin-options/messages-options.php:301
+msgid "Maximum category quantity exceeded"
+msgstr "Quantità massima per la categoria superata"
+
+#: ../plugin-options/messages-options.php:150
+msgid ""
+"Your cart cannot contain more than {limit} products belonging to category "
+"{category_name}."
+msgstr ""
+"Il tuo carrello non può contenere più di {limit} prodotti appartenenti alla "
+"categoria {category_name}."
+
+#: ../plugin-options/messages-options.php:156
+#: ../plugin-options/messages-options.php:311
+msgid "Minimum category spend not reached"
+msgstr "Spesa minima per la categoria non raggiunta"
+
+#: ../plugin-options/messages-options.php:160
+msgid ""
+"You must spend at least {limit} for products belonging to category "
+"{category_name}."
+msgstr ""
+"Devi raggiungere almeno {limit} di prodotti appartenenti alla categoria "
+"{category_name}."
+
+#: ../plugin-options/messages-options.php:166
+#: ../plugin-options/messages-options.php:321
+msgid "Maximum category spend exceeded"
+msgstr "Spesa massima per la categoria superata"
+
+#: ../plugin-options/messages-options.php:170
+msgid ""
+"You cannot spend more than {limit} for products belonging to category "
+"{category_name}."
+msgstr ""
+"Non puoi effettuare più di {limit} di spesa per prodotti appartenenti alla "
+"categoria {category_name}."
+
+#: ../plugin-options/messages-options.php:176
+#: ../plugin-options/messages-options.php:331
+msgid "Minimum tag quantity not reached"
+msgstr "Quantità minima per il tag non raggiunta"
+
+#: ../plugin-options/messages-options.php:180
+msgid "Your cart must contain {limit} products with tagged {tag_name}."
+msgstr ""
+"Il tuo carrello deve contenere almeno {limit} prodotti con il tag {tag_name}."
+
+#: ../plugin-options/messages-options.php:186
+#: ../plugin-options/messages-options.php:341
+msgid "Maximum tag quantity exceeded"
+msgstr "Quantità massima per il tag superata"
+
+#: ../plugin-options/messages-options.php:190
+msgid "Your cart cannot contain more than {limit} products tagged {tag_name}."
+msgstr ""
+"Il tuo carrello non può contenere più di {limit} prodotti con il tag "
+"{tag_name}."
+
+#: ../plugin-options/messages-options.php:196
+#: ../plugin-options/messages-options.php:351
+msgid "Minimum tag spend not reached"
+msgstr "Spesa minima per il tag non raggiunta"
+
+#: ../plugin-options/messages-options.php:200
+msgid "You must spend at least {limit} for products tagged {tag_name}."
+msgstr ""
+"Devi raggiungere almeno {limit} di spesa per prodotti con il tag {tag_name}."
+
+#: ../plugin-options/messages-options.php:206
+#: ../plugin-options/messages-options.php:361
+msgid "Maximum tag spend exceeded"
+msgstr "Spesa massima per il tag superata"
+
+#: ../plugin-options/messages-options.php:210
+msgid "You cannot spend more than {limit} for products tagged {tag_name}."
+msgstr ""
+"Non puoi effettuare più di {limit} di spesa per prodotti con il tag "
+"{tag_name}."
+
+#: ../plugin-options/messages-options.php:220
+msgid "\"Add to Cart\" Error Messages"
+msgstr "Messaggi di errore \"Aggiungi al carrello\""
+
+#: ../plugin-options/messages-options.php:224
+msgid "Enable messages on Add to Cart"
+msgstr "Abilita messaggi al clic su \"Aggiungi al carrello\""
+
+#: ../plugin-options/messages-options.php:235
+msgid ""
+"The product has been added to the cart, but minimum number of items required "
+"in cart ({limit}) has not been reached yet."
+msgstr ""
+"Il prodotto è stato aggiunto al carrello, ma il numero di articoli minimo "
+"richiesto nel carrello ({limit}) non è stato ancora raggiunto."
+
+#: ../plugin-options/messages-options.php:245
+msgid ""
+"You cannot add this product because your cart cannot contain more than "
+"{limit} products."
+msgstr ""
+"Non puoi aggiungere questo prodotto poiché il tuo carrello contiene più di "
+"{limit} prodotti."
+
+#: ../plugin-options/messages-options.php:255
+msgid ""
+"The product has been added to the cart but minimum spend required ({limit}) "
+"has not be reached yet."
+msgstr ""
+"Il prodotto è stato aggiunto al carrello ma il minimo di spesa richiesto "
+"({limit}) non è stato ancora raggiunto."
+
+#: ../plugin-options/messages-options.php:265
+msgid ""
+"You cannot add this product, because maximum totals for your cart cannot "
+"exceed {limit}."
+msgstr ""
+"Non puoi aggiungere questo prodotto, poiché hai superato il totale massimo "
+"di spesa per il tuo carrello {limit}."
+
+#: ../plugin-options/messages-options.php:275
+msgid ""
+"The product has been added to the cart, but minimum quantity required for "
+"this product ({limit}) has not been reached yet."
+msgstr ""
+"Il prodotto è stato aggiunto al carrello, ma la quantità minima richiesta "
+"per questo prodotto ({limit}) non è stata ancora raggiunta."
+
+#: ../plugin-options/messages-options.php:285
+msgid ""
+"You cannot add this product because maximum quantity for this product "
+"({limit}) has been reached."
+msgstr ""
+"Non puoi aggiungere questo prodotto poiché la quantità massima consentita "
+"per questo prodotto ({limit}) è stata raggiunta."
+
+#: ../plugin-options/messages-options.php:295
+msgid ""
+"The product has been added to the cart, but minimum quantity required for "
+"category {category_name} ({limit}) has not been reached yet."
+msgstr ""
+"Il prodotto è stato aggiunto al carrello, ma la quantità minima richiesta "
+"per la categoria {category_name} ({limit}) non è stata ancora raggiunta."
+
+#: ../plugin-options/messages-options.php:305
+msgid ""
+"You cannot add this product because your cart cannot contain more than "
+"{limit} products belonging to category {category_name}."
+msgstr ""
+"Non puoi aggiungere questo prodotto poiché il tuo carrello non può contenere "
+"più di {limit} prodotti appartenenti alla categoria {category_name}."
+
+#: ../plugin-options/messages-options.php:315
+msgid ""
+"The product has been added to the cart, but minimum spend required for "
+"category {category_name} ({limit}) has not been reached yet."
+msgstr ""
+"Il prodotto è stato aggiunto al carrello, ma il minimo di spesa richiesto "
+"per la categoria {category_name} ({limit}) non è stato ancora raggiunto."
+
+#: ../plugin-options/messages-options.php:325
+msgid ""
+"You cannot add this product because total spend for products belonging to "
+"category {category_name} cannot exceed {limit}."
+msgstr ""
+"Non puoi aggiungere questo prodotto poiché il totale di spesa per prodotti "
+"appartenenti alla categoria {category_name} non può superare {limit}."
+
+#: ../plugin-options/messages-options.php:335
+msgid ""
+"The product has been added to the cart but minumum required quantity for "
+"products tagged {tag_name} ({limit}) has not been reached yet."
+msgstr ""
+"Il prodotto è stato aggiunto al carrello, ma la quantità minima richiesta "
+"per i prodotti con il tag {tag_name} ({limit}) non è stata ancora raggiunta."
+
+#: ../plugin-options/messages-options.php:345
+msgid ""
+"You cannot add this product because your cart cannot contain more than "
+"{limit} products tagged {tag_name}"
+msgstr ""
+"Non puoi aggiungere questo prodotto poiché il tuo carrello non può contenere "
+"più di {limit} prodotti con il tag {tag_name}"
+
+#: ../plugin-options/messages-options.php:355
+msgid ""
+"The product has been added to the cart but minimum spend required for "
+"products tagged {tag_name} ({limit}) has not been reached yet."
+msgstr ""
+"Il prodotto è stato aggiunto al carrello, ma la spesa minima richiesta per i "
+"prodotti con il tag {tag_name} ({limit}) non è stata ancora raggiunta."
+
+#: ../plugin-options/messages-options.php:365
+msgid ""
+"You cannot add this product because total spend for products tagged "
+"{tag_name} cannot exceed {limit}."
+msgstr ""
+"Non puoi aggiungere questo prodotto poiché la spesa totale per i prodotti "
+"con il tag {tag_name} non può superare {limit}."
+
+#: ../plugin-options/premium-general-options.php:39
+msgid "Enable cart quantity restrictions"
+msgstr "Abilita restrizioni quantità nel carrello"
+
+#: ../plugin-options/premium-general-options.php:68
+msgid "Enable cart spend restrictions"
+msgstr "Abilita restrizioni spesa nel carrello"
+
+#: ../plugin-options/premium-general-options.php:77
+#: ../plugin-options/premium-general-options.php:88
+#: ../plugin-options/premium-general-options.php:187
+#: ../plugin-options/premium-general-options.php:198
+#: ../plugin-options/premium-general-options.php:253
+msgid "Minimum spend for items in cart. Set zero for no restrictions."
+msgstr ""
+"Spesa minima per gli articoli nel carrello. Imposta zero per non applicare "
+"restrizioni."
+
+#: ../plugin-options/premium-general-options.php:97
+msgid "Include shipping rates and relative fees."
+msgstr "Includi spese di spedizione e relative tasse."
+
+#: ../plugin-options/premium-general-options.php:108
+msgid "Product restrictions"
+msgstr "Restrizioni prodotto"
+
+#: ../plugin-options/premium-general-options.php:112
+msgid "Enable product quantity restrictions"
+msgstr "Abilita restrizioni quantità prodotto"
+
+#: ../plugin-options/premium-general-options.php:121
+msgid ""
+"Minimum number of items required for each product. Set zero for no "
+"restrictions."
+msgstr ""
+"Numero minimo di articoli richiesto per ciascun prodotto. Imposta zero per "
+"non applicare restrizioni."
+
+#: ../plugin-options/premium-general-options.php:132
+msgid ""
+"Maximum quantity allowed for each single product. Set zero for no "
+"restrictions."
+msgstr ""
+"Quantità massima consentita per ogni singolo prodotto. Imposta zero per non "
+"applicare restrizioni."
+
+#: ../plugin-options/premium-general-options.php:149
+msgid "Enable category quantity restrictions"
+msgstr "Abilita restrizioni quantità per categoria"
+
+#: ../plugin-options/premium-general-options.php:178
+msgid "Enable category spend restrictions"
+msgstr "Abilita restrizioni spesa per categoria"
+
+#: ../plugin-options/premium-general-options.php:215
+msgid "Enable tag quantity restrictions"
+msgstr "Abilita restrizioni quantità per tag"
+
+#: ../plugin-options/premium-general-options.php:244
+msgid "Enable tag spend restrictions"
+msgstr "Abilita restrizioni spesa per tag"
+
+#: ../plugin-options/premium-general-options.php:264
+msgid "Maximum spend for items in cart. Set zero for no restrictions."
+msgstr ""
+"Massimo di spesa per gli articoli nel carrello. Imposta zero per non "
+"applicare restrizioni."
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:80
+msgid "category"
+msgstr "categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:81
+msgid "categories"
+msgstr "categorie"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:103
+msgid "Category"
+msgstr "Categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:104
+#: ../templates/admin/ywmmq-products-bulk-ops.php:102
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:104
+msgid "Excluded"
+msgstr "Escludi"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:105
+#: ../templates/admin/ywmmq-products-bulk-ops.php:103
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:105
+msgid "Override Quantity Restrictions"
+msgstr "Sovrascrivi restrizioni quantità"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:106
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:106
+msgid "Override Spend Restrictions"
+msgstr "Sovrascrivi restrizioni spesa"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:143
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:148
+#: ../templates/admin/ywmmq-products-bulk-ops.php:138
+#: ../templates/admin/ywmmq-products-bulk-ops.php:143
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:143
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:148
+msgid "Edit rule"
+msgstr "Modifica regole"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:144
+msgid "Edit category"
+msgstr "Modifica categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:145
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:203
+#: ../templates/admin/ywmmq-products-bulk-ops.php:140
+#: ../templates/admin/ywmmq-products-bulk-ops.php:180
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:145
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:203
+msgid "Remove from list"
+msgstr "Rimuovi dalla lista"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:154
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:168
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:186
+#: ../templates/admin/ywmmq-products-bulk-ops.php:149
+#: ../templates/admin/ywmmq-products-bulk-ops.php:163
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:154
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:168
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:186
+msgid "Yes"
+msgstr "Sì"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:158
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:175
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:193
+#: ../templates/admin/ywmmq-products-bulk-ops.php:153
+#: ../templates/admin/ywmmq-products-bulk-ops.php:170
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:158
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:175
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:193
+msgid "No"
+msgstr "No"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:171
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:189
+#: ../templates/admin/ywmmq-products-bulk-ops.php:166
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:171
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:189
+#, php-format
+msgid "Min.: %d - Max.: %d"
+msgstr "Min.: %d - Max.: %d"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:265
+#, php-format
+msgid "%s category added successfully"
+msgid_plural "%s categories added successfully"
+msgstr[0] "%s categoria aggiunta con successo"
+msgstr[1] "%s categorie aggiunte con successo"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:270
+msgid "Category updated successfully"
+msgstr "Categoria aggiornata con successo"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:296
+#, php-format
+msgid "%s category removed successfully"
+msgid_plural "%s categories removed successfully"
+msgstr[0] "%s categoria rimossa con successo"
+msgstr[1] "%s categorie rimosse con successo"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:321
+msgid "Category Rule list"
+msgstr "Elenco regole categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:332
+msgid "Add Categories"
+msgstr "Tutte le categorie"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:355
+msgid "Category to edit"
+msgstr "Categoria da modificare"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:355
+msgid "Categories to add"
+msgstr "Categorie da aggiungere"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:366
+#: ../templates/admin/ywmmq-products-bulk-ops.php:330
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:366
+msgid "Search for a product&hellip;"
+msgstr "Cerca un prodotto&hellip;"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:386
+msgid "Do not apply restrictions to products belonging to this category"
+msgstr "Non applicare restrizioni ai prodotti appartenenti a questa categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:386
+msgid "Do not apply restrictions to products belonging to categories selected"
+msgstr ""
+"Non applicare restrizioni ai prodotti appartenenti alle categorie selezionate"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:391
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:435
+msgid "Override category restrictions"
+msgstr "Sovrascrivi restrizioni categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:444
+msgid ""
+"Global spend restrictions for category will be overridden by current ones. "
+"Set zero for no restrictions."
+msgstr ""
+"Le restrizioni di spesa complessiva per categoria saranno sovrascritte da "
+"quelle attuali. Imposta zero per non applicare restrizioni."
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:483
+msgid "Add category rule"
+msgstr "Aggiungi regola categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:483
+msgid "Update category rule"
+msgstr "Aggiorna regola categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:486
+#: ../templates/admin/ywmmq-products-bulk-ops.php:406
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:486
+msgid "Return to rule list"
+msgstr "Torna all'elenco regole"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:519
+msgid "Select at least one category"
+msgstr "Seleziona almeno una categoria"
+
+#: ../templates/admin/ywmmq-categories-bulk-ops.php:523
+#: ../templates/admin/ywmmq-products-bulk-ops.php:443
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:523
+msgid "Select at least one option"
+msgstr "Seleziona almeno un'opzione"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:79
+msgid "product"
+msgstr "prodotto"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:80
+msgid "products"
+msgstr "prodotti"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:101
+msgid "Product"
+msgstr "Prodotto"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:139
+msgid "Edit product"
+msgstr "Modifica prodotto"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:236
+#, php-format
+msgid "%s product added successfully"
+msgid_plural "%s products added successfully"
+msgstr[0] "%s prodotto aggiunto con successo"
+msgstr[1] "%s prodotti aggiunti con successo"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:241
+msgid "Product updated successfully"
+msgstr "Prodotto aggiornato con successo"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:264
+#, php-format
+msgid "%s product removed successfully"
+msgid_plural "%s products removed successfully"
+msgstr[0] "%s prodotto rimosso con successo"
+msgstr[1] "%s prodotti rimossi con successo"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:286
+msgid "Product Rule list"
+msgstr "Elenco regole prodotto"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:296
+msgid "Add Products"
+msgstr "Aggiungi prodotti"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:319
+msgid "Product to edit"
+msgstr "Prodotto da modificare"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:319
+msgid "Products to add"
+msgstr "Prodotti da aggiungere"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:350
+msgid "Do not apply restrictions to this product"
+msgstr "Non applicare alcuna restrizione a questo prodotto"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:350
+msgid "Do not apply restrictions to the selected products"
+msgstr "Non applicare restrizioni ai prodotti selezionati"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:364
+msgid ""
+"Global product restrictions will be overridden by current ones. Set zero for "
+"no restrictions."
+msgstr ""
+"Le restrizioni globali prodotto saranno sovrascritte da quelle correnti. "
+"Imposta zero per non applicare restrizioni."
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:403
+msgid "Add product rule"
+msgstr "Aggiungi regola prodotto"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:403
+msgid "Update product rule"
+msgstr "Aggiorna regola prodotto"
+
+#: ../templates/admin/ywmmq-products-bulk-ops.php:439
+msgid "Select at least one product"
+msgstr "Seleziona almeno un prodotto"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:80
+msgid "tag"
+msgstr "tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:81
+msgid "tags"
+msgstr "tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:103
+msgid "Tag"
+msgstr "Tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:144
+msgid "Edit tag"
+msgstr "Modifica tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:265
+#, php-format
+msgid "%s tag added successfully"
+msgid_plural "%s tags added successfully"
+msgstr[0] "%s tag aggiunto con successo"
+msgstr[1] "%s tag aggiunti con successo"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:270
+msgid "Tag updated successfully"
+msgstr "Tag aggiornato con successo"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:296
+#, php-format
+msgid "%s tag removed successfully"
+msgid_plural "%s tags removed successfully"
+msgstr[0] "%s tag rimosso con successo"
+msgstr[1] "%s tag rimossi con successo"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:321
+msgid "Tag Rule list"
+msgstr "Elenco regole tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:332
+msgid "Add Tags"
+msgstr "Aggiungi tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:355
+msgid "Tag to edit"
+msgstr "Tag da modificare"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:355
+msgid "Tags to add"
+msgstr "Tag da aggiungere"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:386
+msgid "Do not apply restrictions to products with the selected tags"
+msgstr "Non applicare restrizioni ai prodotti con i tag selezionati"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:391
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:435
+msgid "Override tag restrictions"
+msgstr "Sovrascrivi restrizioni tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:444
+msgid ""
+"Global tag spend restrictions will be overridden by current ones. Set zero "
+"for no restrictions."
+msgstr ""
+"Le restrizioni spesa per tag saranno sovrascritte da quelle correnti. "
+"Imposta zero per non applicare restrizioni."
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:483
+msgid "Add tag rule"
+msgstr "Aggiungi regola tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:483
+msgid "Update tag rule"
+msgstr "Aggiorna regola tag"
+
+#: ../templates/admin/ywmmq-tags-bulk-ops.php:519
+msgid "Select at least one tag"
+msgstr "Seleziona almeno un tag"
+
+#~ msgid "Override Value Restrictions"
+#~ msgstr "Sovrascrivi restrizioni spesa"
+
+#~ msgid ""
+#~ "The product has been added to the cart bt minimum spend required for "
+#~ "products tagged {tag_name} ({limit}) has not been reached yet."
+#~ msgstr ""
+#~ "Il prodotto è stato aggiunto al carrello, ma la spesa minima richiesta "
+#~ "per i prodotti con il tag {tag_name} ({limit}) non è stata ancora "
+#~ "raggiunta."

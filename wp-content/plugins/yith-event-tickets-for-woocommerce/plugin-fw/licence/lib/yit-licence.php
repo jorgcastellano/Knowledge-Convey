@@ -143,7 +143,7 @@ if ( ! class_exists( 'YIT_Licence' ) ) {
                 $home_url = str_replace( $scheme, '', $home_url );
             }
 
-            return $home_url;
+            return apply_filters('yit_licence_get_home_url', $home_url );
         }
 
         /**

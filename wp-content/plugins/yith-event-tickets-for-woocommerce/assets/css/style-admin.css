@@ -337,8 +337,8 @@ li.services_options.services_tab.show_if_ticket-event>a:before{
 }
 /***/
 /* Organizers Tab */
-._organization_values_field .select2-input {
-    min-width: 150px;
+._organization_values_field>.select2 {
+    width: auto !important;
 }
 
 

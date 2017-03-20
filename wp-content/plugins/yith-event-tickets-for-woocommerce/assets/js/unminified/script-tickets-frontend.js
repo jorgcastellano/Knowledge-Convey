@@ -148,6 +148,27 @@ jQuery(document).ready(function($){
                 }
 
                 break;
+            case 'date':
+                if($input_is_validate){
+                    var date = Date.parse($(input).val());
+                    $input_is_validate = date ? $input_is_validate : false;
+
+                    if(!$input_is_validate){
+                        var dateParts = $(input).val().split("/");
+                        var dateString = dateParts[2] + '-' + dateParts[1] + '-' + dateParts[0];
+                        date = Date.parse(dateString);
+                        $input_is_validate = date ? true : $input_is_validate;
+                    }
+
+                    if(!$input_is_validate){
+                        display_item_message($(input), 'wrong_date');
+                    } else {
+                        display_item_message($(input), 'good');
+                    }
+                } else {
+                    display_item_message($(input), 'empty');
+                }
+                break;
             default:
                 if(!$input_is_validate){
                     display_item_message(input, 'empty');
@@ -195,7 +216,6 @@ jQuery(document).ready(function($){
     function load_fields_event() {
         //Calcule difference between num rows and current cuantity stock to determinate how many row we need adds.
         var diff = $(this).val() - $('.field_service_row').length;
-        console.log(diff);
         if(diff >= 0) { //Add rows
 
             $('.cart').block({message:null, overlayCSS:{background:"#fff",opacity:.6}});
@@ -324,11 +344,19 @@ jQuery(document).ready(function($){
         $('.yith_evti_total_price').attr('data-current_price', $total_price);
         $(service_panel).attr('data-price_service', $overchage);
 
-        $('.yith_evti_amount_price').text($total_price);
+        $last_price_content = $('.yith_evti_total_price>.price>.woocommerce-Price-amount').contents().last();
+
+        if($last_price_content.hasClass('woocommerce-Price-currencySymbol')){
+            $('.yith_evti_total_price>.price>.woocommerce-Price-amount').contents().first().replaceWith($total_price.toFixed(2));
+
+        } else {
+            $('.yith_evti_total_price>.price>.woocommerce-Price-amount').contents().last().replaceWith($total_price.toFixed(2));
+        }
+        $(document).trigger( 'yith_wcevti_price_refreshed', [ $total_price.toFixed(2) ] );
     }
 
     function refresh_total_price() {
-        $base_price = parseFloat($('meta[itemprop="price"]').attr('content'));
+        $base_price = yith_wcevti_tickets.product.price;
         $num_tickets = parseFloat($('.quantity>input[type=number]').val());
         $total_price = $base_price * $num_tickets;
 
@@ -338,7 +366,15 @@ jQuery(document).ready(function($){
         $('._select_item').trigger('change');
         $('.checkbox').trigger('change');
 
-        $('.yith_evti_amount_price').text($total_price);
+        $last_price_content = $('.yith_evti_total_price>.price>.woocommerce-Price-amount').contents().last();
+
+        if($last_price_content.hasClass('woocommerce-Price-currencySymbol')){
+            $('.yith_evti_total_price>.price>.woocommerce-Price-amount').contents().first().replaceWith($total_price.toFixed(2));
+
+        } else {
+            $('.yith_evti_total_price>.price>.woocommerce-Price-amount').contents().last().replaceWith($total_price.toFixed(2));
+        }
+        $(document).trigger( 'yith_wcevti_price_refreshed', [ $total_price.toFixed(2) ] );
     }
     
     function save_form() {
@@ -454,6 +490,12 @@ jQuery(document).ready(function($){
                 var $notice = $('<span/>').addClass('fa fa-close yith_wcevti_item_message yith_wcevti_item_message_empty').text(' ' + yith_wcevti_tickets.messages.wrong_number_field);
                 $notice.insertBefore(item);
                 display_row_message($row, 'incomplete');
+                break;
+            case 'wrong_date':
+                var $notice = $('<span/>').addClass('fa fa-close yith_wcevti_item_message yith_wcevti_item_message_empty').text(' ' + yith_wcevti_tickets.messages.wrong_date_field);
+                $notice.insertBefore(item);
+                display_row_message($row, 'incomplete');
+                break;
             default:
                 $(item).prev('.yith_wcevti_item_message').remove();
                 break;

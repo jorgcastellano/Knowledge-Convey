@@ -3,7 +3,7 @@ Contributors: tawkto
 Tags: tawk, tawk.to, tawkto, free chat, livechat, chat widget, plugin, enhancement, widget, banckle, Casengo, chat, chat for web, chat online, chat software, click desk, clickdesk, freshdesk, free chat, free live chat, IM Chat, jivochat, jivosite, live chat, live chat inc, live support, live web chat, livechat, olark, online chat, online support, snapengage, wordpress chat, wordpress live chat, Zendesk, Zopim, Happyfox chat, Smartsupp, Smartsup, Smartsapp, Boldchat, Live person, pure chat, chatra
 Requires at least: 2.7
 Tested up to: 4.7
-Stable tag: 0.2.2
+Stable tag: 0.2.5
 
 (OFFICIAL tawk.to plugin) Instantly chat with  visitors on your website with the free tawk.to chat widget.
 
@@ -81,13 +81,24 @@ Note: You will need a free tawk.to account : <a href="https://tawk.to/?utm_sourc
 * Added the ability to exclude a specific url slug
 
 = 0.2.0 =
-* Added multisite support
+* Added multisite support *
 
 = 0.2.1 =
 * Supported version bump
 
 = 0.2.2 =
 * Supported version bump to 4.7
+
+= 0.2.3 =
+* Updating widget code due to known conflict
+
+= 0.2.4 =
+* updated session handling
+* Added the ability to include a specific url slug
+* modified plugin settings page interface
+
+= 0.2.5 = 
+* Fixed include url warning message thrown
 
 == Frequently Asked Questions ==
 

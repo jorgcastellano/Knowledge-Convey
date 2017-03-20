@@ -42,7 +42,7 @@ function yith_wcevti_set_args_mail_template($post){
     $post_meta = get_post_meta($post->ID, '', true);
     $mail_template = get_post_meta($post_meta['wc_event_id'][0], '_mail_template', true);
 
-    $fields = '';
+    $fields = array();
     $price = __('Free', 'yith-event-tickets-for-woocommerce' );
 
     $location = get_post_meta($post_meta['wc_event_id'][0], '_direction_event', true);
@@ -59,7 +59,6 @@ function yith_wcevti_set_args_mail_template($post){
 
         }
     }
-
     if(isset($post_meta['wc_total'][0])){
         $price = $post_meta['wc_total'][0];
     }
@@ -191,13 +190,14 @@ function yith_wcevti_get_google_calendar_link ($id_product){
 }
 
 function yith_wecvti_get_date_message($id){
+    $product = wc_get_product($id);
     $message_start = '';
     $message_end = '';
 
-    $start_date = get_post_meta($id, '_start_date_picker', true);
-    $start_time = get_post_meta($id, '_start_time_picker', true);
-    $end_date = get_post_meta($id, '_end_date_picker', true);
-    $end_time = get_post_meta($id, '_end_time_picker', true);
+    $start_date = yit_get_prop( $product , '_start_date_picker', true);
+    $start_time = yit_get_prop( $product , '_start_time_picker', true);
+    $end_date = yit_get_prop( $product , '_end_date_picker', true);
+    $end_time = yit_get_prop( $product , '_end_time_picker', true);
 
     if(!empty($start_date) & !empty($end_date)) {
         $start_text = __('Start', 'yith-event-tickets-for-woocommerce');
@@ -225,9 +225,8 @@ function is_user_owner($id){
     $owner = false;
     $order_id = get_post_meta($id, 'wc_order_id', true);
     $order = wc_get_order($order_id);
-    if(get_current_user_id() == $order->user_id){
+    if(get_current_user_id() == yit_get_prop($order, 'user_id')){
         $owner = true;
-
     }
     return $owner;
 }

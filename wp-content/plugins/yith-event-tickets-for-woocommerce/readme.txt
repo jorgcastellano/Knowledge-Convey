@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: woocommerce event tickets, product tickets, product event, tickets, ticket, events, event, woocommerce product event, woocommerce product event, woo event tickets, wc event tickets, e-commerce, event ticket, event tickets, WooCommerce, WooCommerce event ticket, calendar, yit, yith, yithemes
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html/
 
@@ -33,9 +33,6 @@ This will make you manage tickets in a simple way from your own website and will
 * Handle ticket stock
 * Insert start and end date of the ticket
 * Integration with Google Calendar
-* Print out the ticket from the summary page after the purchase
-* Download the ticket in PDF format
-* Receive the ticket as email attachment
 
 = Premium features: =
 
@@ -96,6 +93,17 @@ Also available in:
 
 
 == Changelog ==
+
+
+= 1.1.0 =
+
+* New: Support to WooCommerce 2.7 RC 1
+* New: Added date field type on 'Fields'.
+* Update: Yith Plugin Framework.
+* Fix: Currency position fixed. Now the symbol will be display defined by WooCommerce settings.
+* Fix: Break lines on pdf and preview template.
+* Fix: Url documentation on plugins page.
+* Fix: Some errors and style issues.
 
 = 1.0.2 =
 

@@ -30,11 +30,6 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
     class YITH_Tickets_Admin{
 
         /**
-         * @var Panel page
-         */
-        protected $_panel_page = 'yith_wcte_panel';
-
-        /**
          * @var doc_url
          */
         protected $doc_url = 'http://docs.yithemes.com/yith-event-tickets-for-woocommerce';
@@ -45,16 +40,6 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
         protected $_official_documentation = 'http://docs.yithemes.com/yith-event-tickets-for-woocommerce' ;
 
         /**
-         * @var $_premium string Premium tab template file name
-         */
-        protected $_premium = 'premium.php';
-
-        /**
-         * @var string Premium version landing link
-         */
-        protected $_premium_landing = 'https://yithemes.com/themes/plugins/yith-woocommerce-event-tickets';
-
-        /**
          * Construct
          *
          * @author Francsico Mateo
@@ -63,6 +48,7 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
         public function __construct(){
 
             /* === Action links and meta === */
+            add_filter( 'plugin_action_links_' . plugin_basename( YITH_WCEVTI_PATH . 'init.php' ), array( $this, 'action_links' ) );
             add_filter( 'plugin_row_meta', array( $this, 'add_plugin_meta' ), 10, 2 );
 
             /* === My custom general fields === */
@@ -91,20 +77,14 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
             add_action( 'manage_ticket_posts_custom_column', array($this, 'render_ticket_custom_columns'), 10, 2 );
             add_action( 'pre_get_posts', array($this, 'search_ticket_for_place'));
 
-            //Register panel
-            add_action( 'admin_menu', array( $this, 'register_panel' ), 5) ;
-            add_action( 'yith_wcevti_premium', array( $this, 'premium_tab' ) );
-
         }
-
-
 
         /**
          * Sidebar links
          *
          * @return   array The links
          * @since    1.2.1
-         * @author Francsico Mateo
+         * @author   Andrea Grillo <andrea.grillo@yithemes.com>
          */
         public function get_sidebar_link(){
             $links =  array(
@@ -119,77 +99,6 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
             );
 
             return $links;
-        }
-
-
-        /**
-         * Add a panel under YITH Plugins tab
-         *
-         * @return   void
-         * @since    1.0
-         * @author Francsico Mateo
-         * @use     /Yit_Plugin_Panel class
-         * @see      plugin-fw/lib/yit-plugin-panel.php
-         */
-        public function register_panel() {
-
-            if ( ! empty( $this->_panel ) ) {
-                return;
-            }
-
-            $admin_tabs = array(
-                'premium' => __( 'Premium Version', 'yith-event-tickets-for-woocommerce' )
-            );
-
-
-            $args = array(
-                'create_menu_page' => true,
-                'parent_slug'      => '',
-                'page_title'       => __( 'Event Tickets', 'yith-event-tickets-for-woocommerce' ),
-                'menu_title'       => __( 'Event Tickets', 'yith-event-tickets-for-woocommerce' ),
-                'capability'       => 'manage_options',
-                'parent'           => '',
-                'parent_page'      => 'yit_plugin_panel',
-                'page'             => $this->_panel_page,
-                'admin-tabs'       => apply_filters( 'yith-wcevti-admin-tabs', $admin_tabs ),
-                'options-path'     => YITH_WCEVTI_PATH . '/plugin-options'
-            );
-
-            /* === Fixed: not updated theme  === */
-            if( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
-                require_once( YITH_WACP_DIR . '/plugin-fw/lib/yit-plugin-panel-wc.php' );
-            }
-
-            $this->_panel = new YIT_Plugin_Panel_WooCommerce( $args );
-        }
-
-        /**
-         * Premium Tab Template
-         *
-         * Load the premium tab template on admin page
-         *
-         * @return   void
-         * @since    1.0
-         * @author Francsico Mateo
-         * @return void
-         */
-        public function premium_tab() {
-            $premium_tab_template = YITH_WCEVTI_PATH . 'templates/admin/' . $this->_premium;
-            if( file_exists( $premium_tab_template ) ) {
-                include_once($premium_tab_template);
-            }
-
-        }
-
-        /**
-         * Get the premium landing uri
-         *
-         * @since   1.0.0
-         * @author  @author Francsico Mateo
-         * @return  string The premium landing link
-         */
-        public function get_premium_landing_uri() {
-            return defined( 'YITH_REFER_ID' ) ? $this->_premium_landing . '?refer_id=' . YITH_REFER_ID : $this->_premium_landing.'?refer_id=1030585';
         }
 
         /**
@@ -220,60 +129,25 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
          */
         public function save_custom_fields( $post_id ){
 
+            $product = wc_get_product($post_id);
+
             //*** Save Start and End Event Data ***
             $start_date_picker_field = $_POST['_start_date_picker_field'];
 
-            if( ! empty( $start_date_picker_field ) ) {
-                update_post_meta( $post_id, '_start_date_picker', esc_attr( $start_date_picker_field ) );
-            }
+            yit_save_prop( $product, '_start_date_picker', esc_attr( $start_date_picker_field ) );
 
             $start_time_picker_field = $_POST['_start_time_picker_field'];
 
-            if(!empty($start_time_picker_field)){
-                update_post_meta( $post_id, '_start_time_picker', esc_attr( $start_time_picker_field ) );
-            }
+            yit_save_prop($product, '_start_time_picker', esc_attr( $start_time_picker_field ) );
 
             $end_date_picker_field = $_POST['_end_date_picker_field' ];
 
-            if( ! empty( $end_date_picker_field ) ) {
-                update_post_meta( $post_id, '_end_date_picker', esc_attr( $end_date_picker_field) );
-            }
+            yit_save_prop($product, '_end_date_picker', esc_attr( $end_date_picker_field) );
 
             $end_time_picker_field = $_POST['_end_time_picker_field'];
 
-            if(!empty($end_time_picker_field)){
-                update_post_meta( $post_id, '_end_time_picker', esc_attr( $end_time_picker_field ) );
+            yit_save_prop($product, '_end_time_picker', esc_attr( $end_time_picker_field ) );
 
-            }
-
-            //*** Save Latitude, Longitude and address Event location ***
-            if(isset($_POST['_direction_event_field'])){
-                $direction_event = $_POST['_direction_event_field'];
-                update_post_meta($post_id, '_direction_event', esc_attr( $direction_event ));
-            }
-
-            if(isset($_POST['_map_tab_display'])) {
-                $map_tab_display = $_POST['_map_tab_display'] ? $_POST['_map_tab_display'] : '';
-                update_post_meta($post_id, '_map_tab_display', esc_attr($map_tab_display));
-            }
-
-            if(isset($_POST['_latitude_event_field']) && !empty($_POST['_latitude_event_field'])){
-                if(isset($_POST['_direction_event_field']) & empty($_POST['_direction_event_field'])){
-                    $direction_event = '';
-                } else {
-                    $direction_event = $_POST['_latitude_event_field'];
-                }
-                update_post_meta($post_id, '_latitude_event', esc_attr( $direction_event ));
-            }
-
-            if(isset($_POST['_longitude_event_field']) && !empty($_POST['_longitude_event_field'])){
-                if(isset($_POST['_direction_event_field']) & empty($_POST['_direction_event_field'])) {
-                    $direction_event = '';
-                } else {
-                    $direction_event = $_POST['_longitude_event_field'];
-                }
-                update_post_meta($post_id, '_longitude_event', esc_attr( $direction_event ));
-            }
 
             //*** Save fields ***
             if(isset($_POST['_fields']) && !empty($_POST['_fields'])){
@@ -285,10 +159,10 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                         $fields[] = $field_item;
                     }
                 }
-                update_post_meta($post_id, '_fields', $fields);
+                yit_save_prop($product, '_fields', $fields);
 
             } else {
-                update_post_meta($post_id, '_fields', '');
+                yit_save_prop($product, '_fields', '');
             }
 
             //*** Save options for mail templates... ***
@@ -346,8 +220,7 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                             'type' => $template_type,
                             'data' => $data
                         );
-
-                        update_post_meta($post_id, '_mail_template', $mail_template);
+                        yit_save_prop($product, '_mail_template', $mail_template);
 
                         break;
                 }
@@ -422,6 +295,22 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
         }
 
         /**
+         * action_links function.
+         *
+         * @access public
+         *
+         * @param mixed $links
+         * @return array
+         */
+        public function action_links( $links ) {
+            $plugin_links = array(
+                '<a href="' . admin_url( 'admin.php?page=yith_wcevti_panel&tab=settings' ) . '">' . __( 'Settings', 'yith-event-tickets-for-woocommerce' ) . '</a>'
+            );
+
+            return array_merge( $links, $plugin_links );
+        }
+
+        /**
          * Adds plugin row meta
          *
          * @param $plugin_meta array
@@ -431,8 +320,9 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
          */
         public function add_plugin_meta( $plugin_meta, $plugin_file ){
             // documentation link
-            $plugin_meta['documentation'] = '<a target="_blank" href="' . $this->doc_url . '">' . __( 'Plugin Documentation', 'yith-event-tickets-for-woocommerce' ) . '</a>';
-
+            if('yith-event-tickets-for-woocommerce.premium/init.php' == $plugin_file){
+                $plugin_meta['documentation'] = '<a target="_blank" href="' . $this->doc_url . '">' . __( 'Plugin Documentation', 'yith-event-tickets-for-woocommerce' ) . '</a>';
+            }
             return $plugin_meta;
         }
 
@@ -519,8 +409,8 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                             $display_name = $user->data->display_name;
                             $user_email = $user->data->user_email;
                         } else {
-                            $display_name = $order->billing_first_name;
-                            $user_email = $order->billing_email;
+                            $display_name = yit_get_prop( $order, 'billing_first_name');
+                            $user_email = yit_get_prop( $order, 'billing_email');
                         }
 
                         ?>
@@ -535,7 +425,8 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                     break;
                 case 'place':
                     $product_id = get_post_meta($post_id, 'wc_event_id', true);
-                    $direction_event = get_post_meta($product_id, '_direction_event', true);
+                    $product_ticket = wc_get_product($product_id);
+                    $direction_event = yit_get_prop($product_ticket, '_direction_event', true);
                     if(empty($direction_event)){
                         echo __('No location has been defined for this event', 'yith-event-tickets-for-woocommerce');
                     } else {
@@ -547,14 +438,16 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                     $order = wc_get_order($order_id);
                     if(is_a($order, 'WC_Order')){
                         $date_format = get_option('date_format');
-                        $purchased_date = date_i18n($date_format, strtotime($order->order_date));
+                        $order_date = yit_get_prop($order, 'order_date');
+                        $purchased_date = date_i18n($date_format, strtotime($order_date));
                         echo $purchased_date;
                     }
                     break;
                 case 'start_end':
                     $product_id = get_post_meta($post_id, 'wc_event_id', true);
-                    $start_date = get_post_meta($product_id, '_start_date_picker', true);
-                    $end_date = yit_get_post_meta($product_id, '_end_date_picker', true);
+                    $product_ticket = wc_get_product($product_id);
+                    $start_date = yit_get_prop($product_ticket, '_start_date_picker', true);
+                    $end_date = yit_get_prop($product_ticket, '_end_date_picker', true);
 
                     if(!$start_date | !$end_date){
                         echo __('No start or end date has been defined for this event', 'yith-event-tickets-for-woocommerce');
@@ -616,7 +509,7 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
         public function print_ticket_order_metabox($post){
 
             $post_meta = get_post_meta($post->ID, '', true);
-            $fields = '';
+            $fields = array();
 
 
             foreach ($post_meta as $key => $meta){

@@ -3,7 +3,7 @@
  * Plugin Name: Aelia Currency Switcher Integration
  * Plugin URI:
  * Version: 1.0
- * Description: Integrates With Aelia Currency Switcher Integration And Allows you to set product's role based price on currency based 
+ * Description: Works With Aelia Currency Switcher Integration And Allows you to set product's role based price on currency based
  * Author: Varun Sridharan
  * Author URI: http://varunsridharan.in
  * Last Update: 2016-03-04 
@@ -24,7 +24,7 @@ class Aelia_Currency_Switcher_Integration_WC_RBP {
 		add_filter('wc_rbp_addon_fields', array($this,'add_fields'));
 		add_action('wc_rbp_init', array($this,'render'));
 		add_action('wc_rbp_addon_styles',array($this,'add_style'));
-		add_action('wc_rbp_product_save_after',array($this,'save_product_price'));
+		add_action('wc_rbp_product_save_default',array($this,'save_product_price'));
 		add_action('wc_rbp_product_class_attribute',array($this,'add_acs_price_data_simple'));
 		add_action('wc_rbp_product_price_value', array($this,'change_wc_rbp_price'),50,6);
         add_filter('wc_rbp_product_price',array($this,'change_wc_rbp_product_price'),10,20);

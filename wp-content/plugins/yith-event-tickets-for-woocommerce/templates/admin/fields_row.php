@@ -16,6 +16,7 @@
             <option value="textarea" <?php selected( isset( $field['_type'] ) && $field['_type'] == 'textarea' ) ?> ><?php echo __( 'Textarea', 'yith-event-tickets-for-woocommerce' ); ?></option>
             <option value="email" <?php selected( isset( $field['_type'] ) && $field['_type'] == 'email' ) ?> ><?php echo __( 'Email', 'yith-event-tickets-for-woocommerce' ); ?></option>
             <option value="number" <?php selected( isset( $field['_type'] ) && $field['_type'] == 'number' ) ?> ><?php echo __( 'Number', 'yith-event-tickets-for-woocommerce' ); ?></option>
+            <option value="date" <?php selected( isset( $field['_type'] ) && $field['_type'] == 'date' ) ?> ><?php echo __( 'Date', 'yith-event-tickets-for-woocommerce' ); ?></option>
         </select>
     </td>
     <td class="form-field _fields_<?php echo $index ?>_required_field option-required">
