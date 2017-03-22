@@ -1,0 +1,774 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Tickets\n"
+"POT-Creation-Date: 2017-03-13 09:16+0000\n"
+"PO-Revision-Date: 2015-10-16 14:09+0100\n"
+"Last-Translator: \n"
+"Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,"
+"_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: plugin-fw\n"
+
+#: includes/class.yith-event-tickets-admin-premium.php:134
+msgctxt "shortened plugin name"
+msgid "Event Tickets"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin-premium.php:137
+#: includes/class.yith-event-tickets-admin.php:307
+msgid "Settings"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin-premium.php:241
+msgid "Map"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin-premium.php:250
+#: includes/class.yith-event-tickets-admin.php:354
+msgid "Fields"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin-premium.php:258
+msgid "Services"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin-premium.php:266
+msgid "Organizers and assistants"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin-premium.php:274
+#: includes/class.yith-event-tickets-admin.php:362
+msgid "Email template"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:92
+msgid "Plugin documentation"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:96
+msgid "Help Center"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:266
+msgid "Remove this Service?"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:324
+msgid "Plugin Documentation"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:383
+#: templates/admin/edit_template_default.php:25
+msgid "Ticket"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:384
+#: templates/admin/edit_template_default.php:27
+msgid "Order"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:385
+msgid "Place"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:386
+msgid "Purchase date"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:387
+msgid "Start/End event"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:417
+msgid "by"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:419
+msgid "Unregistered user"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:423
+msgid "The order linked to this event has been deleted..."
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:431
+msgid "No location has been defined for this event"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:453
+msgid "No start or end date has been defined for this event"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:455
+msgid "to"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:502
+#, php-format
+msgid "Event #%d %s details"
+msgstr ""
+
+#: includes/class.yith-event-tickets-admin.php:506
+msgid "Ticket template"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:104
+msgid "Need to fill one or more of the above fields or services!"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:168
+msgid "Assistants"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:179
+msgid "Location of the event"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:242
+#, php-format
+msgid "Select number: the selected value for %s service is out of range."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:246
+#, php-format
+msgid ""
+"Select number: the selected value for %s service has not been selected. It's "
+"mandatory field."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:254
+msgid "Select service required: it's not selected."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:258
+msgid "Select service: the selected value does not exist."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:277
+msgid "You are trying to buy more services than the available. "
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:278
+msgid " it's out of range."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:294
+msgid " has been already selected."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:299
+msgid " is already in your cart."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:304
+msgid " is out of stock"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:308
+msgid " has been bought by another user."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:408
+#: includes/class.yith-event-tickets-frontend-premium.php:443
+#: includes/class.yith-event-tickets-frontend-premium.php:479
+msgid "Yes"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:423
+#: includes/class.yith-event-tickets-frontend-premium.php:486
+msgid "Ok"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:441
+msgid "Reduced price activated"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend-premium.php:443
+msgid "No"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:117
+#: templates/admin/date_fields.php:5
+msgid "Start date"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:118
+#: templates/admin/date_fields.php:17
+msgid "End date"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:121
+#: includes/class.yith-event-tickets-frontend.php:123
+msgid "Complete"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:122
+msgid "Need to fill one or more of the above fields"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:124
+msgid "Incomplete"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:125
+msgid "Incorrect email format"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:126
+msgid "Incorrect number format"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:127
+msgid "Incorrect date format"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:128
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:129
+msgid "tickets"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:130
+msgid "ticket"
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:411
+#, php-format
+msgid "The required text field \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:418
+#, php-format
+msgid "The required textarea field \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:425
+#, php-format
+msgid "The required email field \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:431
+#, php-format
+msgid "The format of the email address entered for \"%s\" is not correct."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:439
+#, php-format
+msgid "The required field \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:443
+#, php-format
+msgid "The required field \"%s\" must be a number."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:450
+#, php-format
+msgid "The required date \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:457
+#, php-format
+msgid "The date format entered for \"%s\" is not correct."
+msgstr ""
+
+#: includes/class.yith-event-tickets-shortcodes.php:130
+msgid "Users who will take part in the event"
+msgstr ""
+
+#: includes/class.yith-event-tickets-shortcodes.php:167
+msgid "Organizers"
+msgstr ""
+
+#: includes/class.yith-event-tickets.php:173
+msgctxt "product type in Edit product page"
+msgid "Event Ticket"
+msgstr ""
+
+#: includes/class.yith-event-tickets.php:202
+msgctxt "Handle purchased tickets on your shop"
+msgid "Purchased tickets"
+msgstr ""
+
+#: includes/class.yith-event-tickets.php:203
+msgctxt "Purchased tickets"
+msgid "Purchased tickets"
+msgstr ""
+
+#: includes/class.yith-event-tickets.php:204
+msgctxt "Purchased tickets"
+msgid "Tickets"
+msgstr ""
+
+#: includes/class.yith-event-tickets.php:205
+msgid "Edit Ticket"
+msgstr ""
+
+#: includes/functions.wcevti-premium.php:442
+msgid " Service selected have been already bought!"
+msgstr ""
+
+#: includes/functions.wcevti-premium.php:446
+msgid " Service its out ranged!"
+msgstr ""
+
+#: includes/functions.wcevti-premium.php:485
+msgid "Some of the selected services have been already bought!"
+msgstr ""
+
+#: includes/functions.wcevti-premium.php:489
+msgid "You are trying to add more services than available!"
+msgstr ""
+
+#: includes/functions.yith-wcevti.php:46 templates/frontend/services_row.php:72
+#: templates/frontend/services_row.php:87
+msgid "Free"
+msgstr ""
+
+#: includes/functions.yith-wcevti.php:203
+msgid "Start"
+msgstr ""
+
+#: includes/functions.yith-wcevti.php:204
+msgid "at"
+msgstr ""
+
+#: includes/functions.yith-wcevti.php:205
+msgid "Finish"
+msgstr ""
+
+#: panel/settings-options.php:21
+msgctxt "Panel: page title"
+msgid "General settings"
+msgstr ""
+
+#: panel/settings-options.php:28
+msgctxt "Admin option: Enable location maps"
+msgid "Enable Location site:"
+msgstr ""
+
+#: panel/settings-options.php:30
+msgctxt "Admin option: Enable location maps"
+msgid "Check this option to enable Google Maps event location"
+msgstr ""
+
+#: panel/settings-options.php:37
+msgctxt "Admin option: Google Maps Api Key"
+msgid "Google Maps API Key:"
+msgstr ""
+
+#: panel/settings-options.php:39
+msgctxt ""
+"Admin option:\n"
+"                Google Maps Api Key"
+msgid ""
+"Your Api Key here, you need a Google Developer account to generate your Api "
+"Key for Google Maps"
+msgstr ""
+
+#: templates/admin/date_fields.php:10
+msgid "Start time"
+msgstr ""
+
+#: templates/admin/date_fields.php:23
+msgid "End time"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:3
+msgid "Header image"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:4
+#: templates/admin/edit_template_default.php:41
+#: templates/admin/edit_template_default.php:49
+msgid "Choose..."
+msgstr ""
+
+#: templates/admin/edit_template_default.php:8
+#: templates/admin/edit_template_default.php:45
+#: templates/admin/edit_template_default.php:53
+msgid "Clear"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:12
+msgid "Display barcode"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:21
+msgid "Type of barcode"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:26
+msgid "Product"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:34
+msgid ""
+"If you want to display barcodes on your Event Tickets, please, install YITH "
+"WooCommerce Barcodes and Qr Codes plugin"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:40
+msgid "Background image"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:48
+msgid "Footer logo"
+msgstr ""
+
+#: templates/admin/edit_template_default.php:56
+msgid "Additional text"
+msgstr ""
+
+#: templates/admin/fields_row.php:15
+msgid "Text"
+msgstr ""
+
+#: templates/admin/fields_row.php:16
+msgid "Textarea"
+msgstr ""
+
+#: templates/admin/fields_row.php:17
+msgid "Email"
+msgstr ""
+
+#: templates/admin/fields_row.php:18
+msgid "Number"
+msgstr ""
+
+#: templates/admin/fields_row.php:19
+msgid "Date"
+msgstr ""
+
+#: templates/admin/fields_row.php:27 templates/admin/increase_stock_row.php:41
+#: templates/admin/increase_time_row.php:42
+#: templates/admin/select_service_row.php:58 templates/admin/service_row.php:29
+msgid "Remove"
+msgstr ""
+
+#: templates/admin/increase_stock_row.php:18
+#: templates/admin/increase_time_row.php:18
+#: templates/admin/reduce_ticket.php:21
+msgid "Fixed"
+msgstr ""
+
+#: templates/admin/increase_stock_row.php:19
+#: templates/admin/increase_time_row.php:19
+#: templates/admin/reduce_ticket.php:24
+msgid "Percentage"
+msgstr ""
+
+#: templates/admin/increase_stock_row.php:45
+#: templates/admin/increase_time_row.php:46
+msgid "Description"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:4
+msgid "Increase price based on stock"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:10
+msgid "Do you want to \"Increase price by stock\" feature?"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:12
+msgid "Please, enable stock managment, before"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:21
+#: templates/admin/service_row.php:95
+msgid "Stock"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:22
+#: templates/admin/increase_time_section.php:16
+#: templates/admin/product_data_content.php:16
+#: templates/admin/service_row.php:23
+msgid "Type"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:23
+#: templates/admin/increase_time_section.php:17
+msgid "Increase"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:24
+#: templates/admin/increase_time_section.php:18
+#: templates/admin/product_data_content.php:18
+#: templates/admin/service_row.php:99
+msgid "Actions"
+msgstr ""
+
+#: templates/admin/increase_stock_section.php:49
+#: templates/admin/increase_time_section.php:43
+msgid "Add price-increase rule"
+msgstr ""
+
+#: templates/admin/increase_time_section.php:4
+msgid "Increase price by time"
+msgstr ""
+
+#: templates/admin/increase_time_section.php:15
+msgid "Days before event"
+msgstr ""
+
+#: templates/admin/organization_fields.php:3
+msgid "Organizers and Assistants tab"
+msgstr ""
+
+#: templates/admin/organization_fields.php:7
+msgid "Display Assistants tab"
+msgstr ""
+
+#: templates/admin/organization_fields.php:16
+msgid "Show Organizers"
+msgstr ""
+
+#: templates/admin/organization_fields.php:23
+msgid "Display Organizers on the Assistants tab"
+msgstr ""
+
+#: templates/admin/organization_fields.php:28
+msgid "Add organizer"
+msgstr ""
+
+#: templates/admin/organization_fields.php:42
+msgid "Find and add users that will contribute to the event organization"
+msgstr ""
+
+#: templates/admin/product_data_content.php:6
+msgid "Add custom fields on the tickets for this event"
+msgstr ""
+
+#: templates/admin/product_data_content.php:15
+#: templates/admin/service_row.php:94
+msgid "Name"
+msgstr ""
+
+#: templates/admin/product_data_content.php:17
+msgid "Required"
+msgstr ""
+
+#: templates/admin/product_data_content.php:45
+#: templates/admin/service_row.php:125
+msgid "Add option"
+msgstr ""
+
+#: templates/admin/product_data_content.php:66
+msgid "Email template for your event"
+msgstr ""
+
+#: templates/admin/product_data_content.php:70
+msgid "Type of template"
+msgstr ""
+
+#: templates/admin/product_data_content.php:74
+msgid "Default"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:11
+msgid "Event direction"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:12
+msgid "Event address here"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:14
+msgid ""
+"For physical events, enter your event address here. The location will be "
+"displayed on Google Maps"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:22
+msgid "Display location tab"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:53
+msgid "To display map you must add Google Maps API KEY V3"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:63
+msgid "Add services to this ticket"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:64
+#: templates/admin/product_data_content_premium.php:65
+msgid "Add service"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:69
+#: templates/admin/service_row.php:24 templates/admin/service_row.php:46
+msgid "Checkbox"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:70
+#: templates/admin/service_row.php:25 templates/admin/service_row.php:47
+msgid "Select"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:72
+msgid "Continue"
+msgstr ""
+
+#: templates/admin/product_data_content_premium.php:73
+msgid "Cancel"
+msgstr ""
+
+#: templates/admin/reduce_ticket.php:3
+msgid "Enable reduced-price"
+msgstr ""
+
+#: templates/admin/reduce_ticket.php:14
+msgid "Select price reduction type"
+msgstr ""
+
+#: templates/admin/reduce_ticket.php:28
+msgid "Fixed amount"
+msgstr ""
+
+#: templates/admin/reduce_ticket.php:39
+msgid "Percent amount"
+msgstr ""
+
+#: templates/admin/reduce_ticket.php:52
+msgid "Description for reduced-price tickets"
+msgstr ""
+
+#: templates/admin/select_service_row.php:26
+msgid "Option Name"
+msgstr ""
+
+#: templates/admin/service_row.php:44
+msgid "Service type"
+msgstr ""
+
+#: templates/admin/service_row.php:53
+msgid "Service name"
+msgstr ""
+
+#: templates/admin/service_row.php:54
+msgid "Service name here"
+msgstr ""
+
+#: templates/admin/service_row.php:60
+msgid "Service stock"
+msgstr ""
+
+#: templates/admin/service_row.php:66
+msgid "Service Overcharge"
+msgstr ""
+
+#: templates/admin/service_row.php:76
+msgid "Service required"
+msgstr ""
+
+#: templates/admin/service_row.php:96
+msgid "Overcharge"
+msgstr ""
+
+#: templates/admin/service_row.php:97
+msgid "Range - From"
+msgstr ""
+
+#: templates/admin/service_row.php:98
+msgid "Range - To"
+msgstr ""
+
+#: templates/admin/ticket_order_meta_box.php:5
+msgid "Post date"
+msgstr ""
+
+#: templates/admin/ticket_order_meta_box.php:10
+msgid "Fields details"
+msgstr ""
+
+#: templates/admin/ticket_order_meta_box_services.php:2
+msgid "Services details"
+msgstr ""
+
+#: templates/frontend/fields_services_row.php:8
+msgid "Remove this ticket"
+msgstr ""
+
+#: templates/frontend/services_row.php:31
+msgid "overcharge"
+msgstr ""
+
+#: templates/frontend/services_row.php:63
+msgid "Choose an option"
+msgstr ""
+
+#: templates/frontend/services_row.php:91
+msgid "Choose a number for"
+msgstr ""
+
+#: templates/frontend/services_row.php:102
+msgid "Choose a number"
+msgstr ""
+
+#: templates/frontend/services_row.php:119
+msgid "(Sold)"
+msgstr ""
+
+#: templates/frontend/services_row.php:146
+msgid "Reduced priced"
+msgstr ""
+
+#: templates/frontend/services_row.php:146
+msgid "discount"
+msgstr ""
+
+#: templates/frontend/services_row.php:153
+msgid "Reduced price"
+msgstr ""
+
+#: templates/frontend/users_purchased.php:16
+msgid "tickets purchased"
+msgstr ""
+
+#: templates/frontend/view_pdf_and_gcalendar_button.php:7
+msgid "View"
+msgstr ""
+
+#: templates/frontend/view_pdf_and_gcalendar_button.php:16
+msgid "PDF"
+msgstr ""
+
+#: templates/frontend/view_pdf_and_gcalendar_button.php:19
+msgid "Export to Google Calendar"
+msgstr ""
+
+#: templates/tickets/default-html-before-date.php:6
+#: templates/tickets/default-html-preview-before-date.php:6
+msgid "Location"
+msgstr ""
+
+#: templates/tickets/default-html-preview.php:78
+#: templates/tickets/default-html.php:52
+msgid "Price"
+msgstr ""
+
+#: widgets/class.yith-event-tickets-widget-calendar.php:33
+msgid "Display events from Event Tickets..."
+msgstr ""
+
+#: widgets/class.yith-event-tickets-widget-calendar.php:43
+msgid "Calendar Event Tickets"
+msgstr ""
+
+#: widgets/class.yith-event-tickets-widget-calendar.php:68
+msgid "Title"
+msgstr ""

@@ -47,7 +47,7 @@
 
 <div style="padding: 10px 0; background-color: black; max-height: 20px; width: 100%">
 <ul style="padding: 0 60px 0 0">
-<li style="text-align: right;"><a style="color: white; font-size: 14px; font-weight: bold" href="/my-account/">JOIN US!</a></li>
+<li style="text-align: right;"><a style="color: white; font-size: 14px; font-weight: bold" href="/my-account/">JOIN US / LOGIN</a></li>
 </ul>
 </div>
 	
