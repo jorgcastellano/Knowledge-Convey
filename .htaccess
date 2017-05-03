@@ -10,3 +10,5 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+AddHandler application/x-httpd-php56 .php .php5 .php4 .php3

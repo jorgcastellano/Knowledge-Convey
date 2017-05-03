@@ -38,11 +38,14 @@ span.yith_wcevti_item_message {
 .field_row>p>input{
     width: 13em !important;
 }
-.service_item {
+.service_item, .check_item {
     display: inline-block;
     width: 100%;
 }
-.service_item>.checkbox{
+.field_row>.check_item>label{
+    display: initial;
+}
+.service_item>.checkbox, .field_item>.checkbox{
     float: left;
     width: 1em !important;
     margin-top: 0.4em !important;

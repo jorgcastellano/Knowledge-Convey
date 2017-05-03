@@ -48,7 +48,7 @@ if ( ! class_exists( 'YIT_Licence' ) ) {
          * @var string The yithemes api uri
          * @since 1.0
          */
-        protected $_api_uri = 'http://yithemes.com';
+        protected $_api_uri = 'https://yithemes.com';
 
         /**
          * @var string The yithemes api uri query args
@@ -692,7 +692,7 @@ if ( ! class_exists( 'YIT_Licence' ) ) {
          * @author   Andrea Grillo <andrea.grillo@yithemes.com>
          */
         public function display_product_name( $product_name ){
-            return str_replace( array( 'for WooCommerce', 'YITH', 'WooCommerce', 'Premium', 'Theme' ), '', $product_name );
+            return str_replace( array( 'for WooCommerce', 'YITH', 'WooCommerce', 'Premium', 'Theme', 'WordPress' ), '', $product_name );
         }
 
         public function get_number_of_membership_products(){

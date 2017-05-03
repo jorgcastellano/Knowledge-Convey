@@ -24,7 +24,6 @@
             }
         }
     }
-
     do_action('yith_wcevti_order_metabox_end_fields', $post);
     ?>
 </div>

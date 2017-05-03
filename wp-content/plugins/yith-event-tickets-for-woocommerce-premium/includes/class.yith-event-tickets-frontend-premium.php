@@ -498,7 +498,7 @@ if ( ! class_exists( 'YITH_Tickets_Frontend_Premium' ) ) {
                 foreach ($cart->cart_contents as $cart_item) {
                     if (isset($cart_item['_field_service']) && isset($cart_item['_field_service']['_services']) & is_array($cart_item['_field_service']['_services'])) {
                         foreach ($cart_item['_field_service']['_services'] as $service) {
-                            $quantity_service = isset($count_services[$cart_item['product_id']][$service['_label']]['_value']) ?$quantity_service = $count_services[$cart_item['product_id']][$service['_label']]['_value']: 1;
+                            $quantity_service = isset($count_services[$cart_item['product_id']][$service['_label']]['_value']) ?  $count_services[$cart_item['product_id']][$service['_label']]['_value'] : 1;
                             $service['_quantity'] = $quantity_service;
                             yith_wcevti_add_service_sold($cart_item['product_id'], $service);
                         }

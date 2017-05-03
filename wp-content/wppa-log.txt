@@ -1,0 +1,34 @@
+{b}Obs{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Created path: /home/interfell/developments/knowledgeconvey/wp-content/uploads/wppa
+{b}Obs{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Created path: /home/interfell/developments/knowledgeconvey/wp-content/uploads/wppa/thumbs
+{b}Obs{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Created path: /home/interfell/developments/knowledgeconvey/wp-content/wppa-depot
+{b}Obs{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Created path: /home/interfell/developments/knowledgeconvey/wp-content/wppa-depot/admin-knowledge-convey
+{b}Obs{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Created path: /home/interfell/developments/knowledgeconvey/wp-content/uploads/wppa/watermarks
+{b}Obs{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Created path: /home/interfell/developments/knowledgeconvey/wp-content/uploads/wppa/fonts
+{b}Obs{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Created path: /home/interfell/developments/knowledgeconvey/wp-content/uploads/wppa/temp/
+{b}Err{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: Unimplemented choice for wppa_cre_uploads_htaccess remove
+{b}Err{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: $wppa_opt[wppa_grant_parent] is not a setting
+{b}url{/b}: /wp-admin/admin-ajax.php?action=wc_rbp_addon_custom_css&ver=3.0.3
+#0  wppa_log() called at [/home/interfell/developments/knowledgeconvey/wp-content/plugins/wp-photo-album-plus/wppa-utils.php:427]
+#1  wppa_opt() called at [/home/interfell/developments/knowledgeconvey/wp-content/plugins/wp-photo-album-plus/wppa-common-functions.php:52]
+#2  wppa_initialize_runtime()
+#3  call_user_func_array() called at [/home/interfell/developments/knowledgeconvey/wp-includes/class-wp-hook.php:298]
+#4  WP_Hook->apply_filters() called at [/home/interfell/developments/knowledgeconvey/wp-includes/class-wp-hook.php:323]
+#5  WP_Hook->do_action() called at [/home/interfell/developments/knowledgeconvey/wp-includes/plugin.php:453]
+#6  do_action() called at [/home/interfell/developments/knowledgeconvey/wp-settings.php:449]
+#7  require_once(/home/interfell/developments/knowledgeconvey/wp-settings.php) called at [/home/interfell/developments/knowledgeconvey/wp-config.php:89]
+#8  require_once(/home/interfell/developments/knowledgeconvey/wp-config.php) called at [/home/interfell/developments/knowledgeconvey/wp-load.php:37]
+#9  require_once(/home/interfell/developments/knowledgeconvey/wp-load.php) called at [/home/interfell/developments/knowledgeconvey/wp-admin/admin-ajax.php:22]
+
+{b}Err{/b}: on:March 24, 2017 5:32 pm: admin-knowledge-convey: $wppa_opt[wppa_grant_parent] is not a setting
+{b}url{/b}: /wp-admin/admin-ajax.php?action=wc_rbp_addon_custom_js&ver=3.0.3
+#0  wppa_log() called at [/home/interfell/developments/knowledgeconvey/wp-content/plugins/wp-photo-album-plus/wppa-utils.php:427]
+#1  wppa_opt() called at [/home/interfell/developments/knowledgeconvey/wp-content/plugins/wp-photo-album-plus/wppa-common-functions.php:52]
+#2  wppa_initialize_runtime()
+#3  call_user_func_array() called at [/home/interfell/developments/knowledgeconvey/wp-includes/class-wp-hook.php:298]
+#4  WP_Hook->apply_filters() called at [/home/interfell/developments/knowledgeconvey/wp-includes/class-wp-hook.php:323]
+#5  WP_Hook->do_action() called at [/home/interfell/developments/knowledgeconvey/wp-includes/plugin.php:453]
+#6  do_action() called at [/home/interfell/developments/knowledgeconvey/wp-settings.php:449]
+#7  require_once(/home/interfell/developments/knowledgeconvey/wp-settings.php) called at [/home/interfell/developments/knowledgeconvey/wp-config.php:89]
+#8  require_once(/home/interfell/developments/knowledgeconvey/wp-config.php) called at [/home/interfell/developments/knowledgeconvey/wp-load.php:37]
+#9  require_once(/home/interfell/developments/knowledgeconvey/wp-load.php) called at [/home/interfell/developments/knowledgeconvey/wp-admin/admin-ajax.php:22]
+

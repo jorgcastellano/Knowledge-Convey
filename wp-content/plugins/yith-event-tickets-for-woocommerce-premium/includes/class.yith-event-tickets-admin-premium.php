@@ -310,6 +310,7 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
             //*** Save Reduce Type ***
             if (isset($_POST['_reduce_ticket']) && !empty($_POST['_reduce_ticket'])){
                 $reduce_ticket = $_POST['_reduce_ticket'];
+                //$changes['_reduce_ticket'] = $reduce_ticket;
                 yit_save_prop( $product, '_reduce_ticket', $reduce_ticket);
             }
 
@@ -324,8 +325,10 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
                         $increase_by_stock[] = $increase;
                     }
                 }
+                //$changes['_increase_by_stock'] = $increase_by_stock;
                 yit_save_prop( $product, '_increase_by_stock', $increase_by_stock);
             } else {
+                //$changes['_increase_by_stock'] = '';
                 yit_save_prop( $product, '_increase_by_stock', '');
             }
 
@@ -340,9 +343,11 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
                         $increase_by_time[] = $increase;
                     }
                 }
+                //$changes['_increase_by_time'] = $increase_by_time;
                 yit_save_prop( $product, '_increase_by_time', $increase_by_time);
 
             } else {
+                //$changes['_increase_by_time'] = '';
                 yit_save_prop( $product, '_increase_by_time', '');
             }
 
@@ -361,6 +366,8 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
                                         $select['_overcharge'] = 0;
                                         $select['_label'] = sanitize_text_field($select['_label']);
                                     }
+                                    //$changes['_service_'.$select['_label'].'_stock'] = $select['_stock'];
+
                                     yit_save_prop( $product,'_service_'.$select['_label'].'_stock', $select['_stock']);
                                 }
                                 array_push($services, $service_item);
@@ -368,18 +375,22 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
                             case 'checkbox':
                             default:
                                 array_push($services, $service_item);
+                                //$changes['_service_'. $service_item['_label'] .'_stock'] = $service_item['_stock'];
+
                                 yit_save_prop( $product,'_service_'. $service_item['_label'] .'_stock', $service_item['_stock']);
                                 break;
                         }
                     }
                 }
 
-                $current_service_stock = yith_wcevti_get_service_stocks($post_id);
-                yith_wcevti_clean_service_stock($post_id, $services, $current_service_stock);
+                $current_service_stock = yith_wcevti_get_service_stocks($product->ID);
+                yith_wcevti_clean_service_stock($product->ID, $services, $current_service_stock);
 
+                //$changes['_services'] = $services;
                 yit_save_prop( $product, '_services', $services);
 
             } else {
+                //$changes['_services'] = '';
                 yit_save_prop( $product, '_services', '');
             }
 
@@ -389,15 +400,17 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
                 $organization['tab_assistants'] = isset($_POST['_organization']['_tab_assistants']) ?  $_POST['_organization']['_tab_assistants'] : '';
                 $organization['display'] = isset($_POST['_organization']['_display']) ?  $_POST['_organization']['_display'] : '';
                 $organization['values'] = isset($_POST['_organization']['_values']) ?  $_POST['_organization']['_values'] : '';
+                //$changes['_organization'] = $organization;
                 yit_save_prop( $product, '_organization', $organization);
             }
 	        //*** Save Latitude, Longitude and address Event location ***
             if(isset($_POST['_direction_event_field'])) {
                 $direction_event = $_POST['_direction_event_field'];
+                //$changes['_direction_event'] = esc_attr($direction_event);
                 yit_save_prop( $product, '_direction_event', esc_attr($direction_event));
 
                 $map_tab_display = isset($_POST['_map_tab_display']) ? $_POST['_map_tab_display'] : '';
-
+                //$changes['_map_tab_display'] = esc_attr($map_tab_display);
                 yit_save_prop( $product, '_map_tab_display', esc_attr($map_tab_display));
             }
 	        $latitude_event = '';
@@ -408,8 +421,12 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
 			        $longitude_event = $_POST['_longitude_event_field'];
 		        }
 	        }
+	        //$changes['_latitude_event'] = esc_attr( $latitude_event );
 	        yit_save_prop( $product, '_latitude_event', esc_attr( $latitude_event ));
-	        yit_save_prop( $product, '_longitude_event', esc_attr( $longitude_event ));
+            //$changes['_longitude_event'] = esc_attr( $longitude_event );
+            yit_save_prop( $product, '_longitude_event', esc_attr( $longitude_event ));
+
+            //return $changes;
         }
 
         /**
@@ -421,6 +438,7 @@ if ( ! class_exists( 'YITH_Tickets_Admin_Premium' ) ) {
          */
         public function event_ticket_type_options ($options){
             $options['virtual']['wrapper_class'] = $options['virtual']['wrapper_class'] . ' show_if_ticket-event';
+            $options['downloadable']['wrapper_class'] = $options['downloadable']['wrapper_class'] . ' show_if_ticket-event';
 
             return $options;
         }

@@ -49,6 +49,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" />
 			</p>
 
+            <?php do_action( 'wordpress_social_login' ); ?>
+
 			<?php do_action( 'woocommerce_login_form' ); ?>
 
 			<p class="form-row">
@@ -74,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<h2><?php _e( 'Register', 'woocommerce' ); ?></h2>
 
-		<form method="post" class="register">
+		<form method="post" class="register" onSubmit="return validarPasswd()">
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
@@ -96,8 +98,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
 					<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
+					<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="password_new" pattern=".{6,}" title="Password must be at least 6 characters" required />
 				</p>
+				<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
+                	<label for="password_2"><?php _e( 'Re-enter new password','woocommerce'); ?> <span class="required">*</span></label>
+		            <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_2" id="password_2" required />
+		        </p>
+			    
 
 			<?php endif; ?>
 
@@ -115,6 +122,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
 
 		</form>
+		<script type="text/javascript">
+			function validarPasswd() {
+				var p1 = document.getElementById("password_new").value;
+				var p2 = document.getElementById("password_2").value;
+				if (p1 != p2) {
+					alert("Passwords must match");
+					return false;
+				} else {
+					return true;
+				}
+			}
+		</script>
 
 	</div>
 

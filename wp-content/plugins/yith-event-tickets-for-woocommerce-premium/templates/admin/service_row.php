@@ -63,7 +63,7 @@
 
                     <!-- Service Checkbox Overcharge -->
                     <div class="service-overcharge-container">
-                        <label for="_services_<?php echo $index?>_overcharge"><?php echo __('Service Overcharge', 'yith-event-tickets-for-woocommerce'); ?></label>
+                        <label for="_services_<?php echo $index?>_overcharge"><?php echo __('Service Surcharge', 'yith-event-tickets-for-woocommerce'); ?></label>
                         <input type="number" class="yith-wceti-service-overcharge" name="_services[<?php echo $index?>][_item_overcharge]" id="_services_<?php echo $index?>_overcharge" value="<?php echo ! empty( $service['_item_overcharge'] ) ? esc_html( $service['_item_overcharge'] )  : ''?>" placeholder="0">
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                             <th></th>
                             <th class="option-label"><?php _e( 'Name', 'yith-event-tickets-for-woocommerce' ) ?></th>
                             <th class="option-stock"><?php _e( 'Stock', 'yith-event-tickets-for-woocommerce' ) ?></th>
-                            <th class="option-overcharge"><?php _e( 'Overcharge', 'yith-event-tickets-for-woocommerce' ) ?></th>
+                            <th class="option-overcharge"><?php _e( 'Surcharge', 'yith-event-tickets-for-woocommerce' ) ?></th>
                             <th class="option-range-from"><?php _e( 'Range - From', 'yith-event-tickets-for-woocommerce' ) ?></th>
                             <th class="option-range-to"><?php _e( 'Range - To', 'yith-event-tickets-for-woocommerce' ) ?></th>
                             <th class="option-actions"><?php _e( 'Actions', 'yith-event-tickets-for-woocommerce' ) ?></th>

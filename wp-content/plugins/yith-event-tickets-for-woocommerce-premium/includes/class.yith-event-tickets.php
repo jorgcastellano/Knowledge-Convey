@@ -103,10 +103,9 @@ if ( ! class_exists( 'YITH_Tickets' ) ) {
             add_action( 'init', array( $this, 'order_event_ticket_init' ));
             add_action( 'init', array($this, 'add_custom_image_sizes'));
 
-
         }
 
-        /**
+            /**
 		 * Main plugin Instance
 		 *
 		 * @return YITH_Tickets Main instance
@@ -229,11 +228,14 @@ if ( ! class_exists( 'YITH_Tickets' ) ) {
 
         public function attach_items_pdf_mail($attachments, $email_id, $object){
             $allowed_emails = array('customer_processing_order', 'customer_completed_order');
+
             if(in_array($email_id, $allowed_emails) && is_a($object, 'WC_Order')){
                 $order_items = $object->get_items();
                 foreach ($order_items as $item){
-                    $pdf_path = YITH_WCEVTI_DOCUMENT_SAVE_PDF_DIR . $item['event_id'] .  '.pdf';
-                    $attachments[] = $pdf_path;
+                    if('ticket-event' == $item['product_type'] ){
+                        $pdf_path = YITH_WCEVTI_DOCUMENT_SAVE_PDF_DIR . $item['event_id'] .  '.pdf';
+                        $attachments[] = $pdf_path;
+                    }
                 }
             }
             return $attachments;

@@ -19,9 +19,14 @@
             <option value="date" <?php selected( isset( $field['_type'] ) && $field['_type'] == 'date' ) ?> ><?php echo __( 'Date', 'yith-event-tickets-for-woocommerce' ); ?></option>
         </select>
     </td>
+
     <td class="form-field _fields_<?php echo $index ?>_required_field option-required">
-        <input type="checkbox" class="checkbox" style="" name="_fields[<?php echo $index ?>][_required]"
-               id="_fields_<?php echo $index ?>_required" <?php checked( isset( $field['_required'] ) && 'on' == $field['_required'] ) ?> >
+        <?php
+        $type = isset($field['_type']) ? $field['_type'] : '';
+        if('check' != $type){ ?>
+            <input type="checkbox" class="checkbox" style="" name="_fields[<?php echo $index ?>][_required]"
+                   id="_fields_<?php echo $index ?>_required" <?php checked( isset( $field['_required'] ) && 'on' == $field['_required'] ) ?> >
+        <?php } ?>
     </td>
     <td class="yith-wceti-remove-field-row option-actions">
         <button class="button"><?php echo __( 'Remove', 'yith-event-tickets-for-woocommerce' ) ?></button>

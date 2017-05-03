@@ -28,7 +28,7 @@
                                        echo '0';
                                    } ?>" id="_services_customer_<?php echo $label; ?>">
                             <label
-                                for="_services_customer_<?php echo $label; ?>"><?php echo esc_html($service['_label']) . ' ( ' . $formated_price_service . ' ' . __('overcharge', 'yith-event-tickets-for-woocommerce') . ' )'; ?></label>
+                                for="_services_customer_<?php echo $label; ?>"><?php echo esc_html($service['_label']) . ' ( ' . $formated_price_service . ' ' . __('surcharge', 'yith-event-tickets-for-woocommerce') . ' )'; ?></label>
                         </p>
                     </div>
                     <?php

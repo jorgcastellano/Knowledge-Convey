@@ -44,10 +44,33 @@
 
 <!-- body -->
 <body <?php body_class(); ?>>
+<!-- Menu de login / register -->
+<?php
+if (is_user_logged_in()){
+        
+                $cu = wp_get_current_user();
+            
+                #echo 'ID: '                . $cu->ID             . '<br />';
+                #echo 'Nombre de usuario: ' . $cu->user_login     . '<br />';
+                #echo 'Nombre: '            . $cu->user_firstname . '<br />';
+                #echo 'Apellidos: '         . $cu->user_lastname  . '<br />';
+                #echo 'Nombre publico: '    . $cu->display_name   . '<br />';
+                #echo 'Email: '             . $cu->user_email     . '<br />';
+                #echo 'Web: '               . $cu->user_url       . '<br />';
+		$nombre_usuario_ac = $cu->user_login;
+        	$nombre_user_log = $cu->user_firstname." ".$cu->user_lastname;
+        }
+else
+	$nombre_usuario_ac = "LOGIN / REGISTER";
+?>
 
-<div style="padding: 10px 0; background-color: black; max-height: 20px; width: 100%">
-<ul style="padding: 0 60px 0 0">
-<li style="text-align: right;"><a style="color: white; font-size: 14px; font-weight: bold" href="/my-account/">JOIN US / LOGIN</a></li>
+<div style="display: block !important; padding: 10px 0; background-color: #031430; max-height: 20px; width: 100%; position:fixed !important; right:0px; top:0px; z-index: 10 !important">
+<ul style="padding: 0 360px 0 0;">
+<li style="text-align: right;">
+	<a style="color: #d3b564; text-transform: uppercase; font-size: 14px;" href="/my-account/">
+		<?php echo $nombre_usuario_ac; ?>	
+	</a>
+</li>
 </ul>
 </div>
 	

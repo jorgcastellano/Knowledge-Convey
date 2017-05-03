@@ -23,6 +23,7 @@ jQuery(document).ready(function($){
      *  ***/
     function set_general_tab() {
         $('.pricing').addClass('show_if_ticket-event');
+        $('#_tax_status').parents('.options_group').addClass('show_if_ticket-event');
         $( 'select#product-type' ).change();
 
         $(document.body).bind('woocommerce-product-type-change', function () {
@@ -239,7 +240,16 @@ jQuery(document).ready(function($){
         $('#fields_product_data').on('click', '.yith-wceti-remove-field-row button', function (event) {
             event.preventDefault();
             $(this).closest('tr').remove();
-        })
+        });
+
+        $('#fields_product_data').on('change', '.yith-wceti-field-type', function (event) {
+            var $field_row = $(this).closest('.yith_wcevti_field_row');
+            if('check' == $(this).val()){
+               $field_row.find('.option-required>.checkbox').hide();
+           }else {
+                $field_row.find('.option-required>.checkbox').show();
+           }
+        });
 
         $('.field-options').find('tbody').sortable();
     }
@@ -344,8 +354,6 @@ jQuery(document).ready(function($){
                 select_heading = panel.find('.service-select-heading'),
                 select_options = panel.find('.yith_wcevti_service_select_panel')
                 service_type_label = container.find('.service-type');
-
-            console.log(service_type_label.find('.service-type-select'));
 
             if( val == 'checkbox' ){
                 checkbox_heading.css('display', 'inline-block');

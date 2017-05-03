@@ -28,7 +28,7 @@ wc_print_notices(); ?>
 
 	<p class="woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
 		<label for="password_1"><?php _e( 'New password', 'woocommerce' ); ?> <span class="required">*</span></label>
-		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_1" id="password_1" />
+		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_1" />
 	</p>
 	<p class="woocommerce-FormRow woocommerce-FormRow--last form-row form-row-last">
 		<label for="password_2"><?php _e( 'Re-enter new password', 'woocommerce' ); ?> <span class="required">*</span></label>

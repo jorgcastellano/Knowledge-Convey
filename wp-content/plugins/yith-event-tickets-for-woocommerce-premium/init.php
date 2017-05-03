@@ -5,7 +5,7 @@ Plugin URI: http://yithemes.com/themes/plugins/yith-woocommerce-event-tickets
 Description: YITH Event Tickets for WooCommerce
 Author: YITHEMES
 Text Domain: yith-event-tickets-for-woocommerce
-Version: 1.1.0
+Version: 1.1.2
 Author URI: http://yithemes.com/
 */
 
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 $wp_upload_dir = wp_upload_dir();
 /* === DEFINE === */
-! defined( 'YITH_WCEVTI_VERSION' )              && define( 'YITH_WCEVTI_VERSION', '1.1.0' );
+! defined( 'YITH_WCEVTI_VERSION' )              && define( 'YITH_WCEVTI_VERSION', '1.1.2' );
 ! defined( 'YITH_WCEVTI_INIT' )                 && define( 'YITH_WCEVTI_INIT', plugin_basename( __FILE__ ) );
 ! defined( 'YITH_WCEVTI_SLUG' )                 && define( 'YITH_WCEVTI_SLUG', 'yith-event-tickets-for-woocommerce' );
 ! defined( 'YITH_WCEVTI_SECRETKEY' )            && define( 'YITH_WCEVTI_SECRETKEY', 'ydq1FqEKDQkIgcgfInrd' );

@@ -39,6 +39,7 @@ function yith_wcevti_print_error($text){
 
 function yith_wcevti_set_args_mail_template($post){
     $args = array();
+
     $post_meta = get_post_meta($post->ID, '', true);
     $mail_template = get_post_meta($post_meta['wc_event_id'][0], '_mail_template', true);
 
@@ -48,9 +49,17 @@ function yith_wcevti_set_args_mail_template($post){
     $location = get_post_meta($post_meta['wc_event_id'][0], '_direction_event', true);
     $date = yith_wecvti_get_date_message($post_meta['wc_event_id'][0]);
 
-    foreach ($post_meta as $key => $meta){
+    if( version_compare( WC()->version, '3.0.0', '<' ) ){
+        $item_meta = $post_meta;
+    } else {
+        $item_meta = wc_get_order_item_meta( $post_meta['wc_order_item_id'][0], '', $single = true );
+    }
+
+
+    foreach ($item_meta as $key => $meta){
         if (preg_match('/field_/i', $key)) {
             $label = str_replace( array( 'field_' ), '', $key );
+            $label = str_replace( array( '_' ), '', $label );
             $value = $meta[0];
 
             $fields[] = array(
@@ -101,8 +110,9 @@ function yith_wcevti_set_args_mail_template($post){
             'content_image' => $content_image,
             'footer_image' => $footer_image
         );
-        $args = apply_filters('yith_wcevti_set_custom_mail_args', $args, $post_meta);
+        $args = apply_filters('yith_wcevti_set_custom_mail_args', $args, $post_meta, $item_meta);
     }
+
     return $args;
 }
 

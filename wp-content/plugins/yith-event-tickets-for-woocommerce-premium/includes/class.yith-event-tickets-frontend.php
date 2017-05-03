@@ -54,18 +54,27 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
             add_action( 'wp_ajax_load_fields_event_action', array ( $this, 'load_fields_event_action'));
             add_action( 'wp_ajax_nopriv_load_fields_event_action', array ( $this, 'load_fields_event_action'));
 
+            //TODO Add a Barcode checking tickets
+            //add_filter('yith_barcode_action_product_check', array($this, 'barcode_product_check'), 10, 2);
+
             //Validation actions...
             add_action ('yith_wcevti_passed_require_fields', array( $this, 'check_validation_fields'), 10, 2);
 
             //Order actions...
-            add_action ('woocommerce_new_order_item', array( $this, 'add_order_item_meta'), 10, 3);
+
+            if( version_compare( WC()->version, '3.0.0', '<' ) ){
+                add_action ('woocommerce_add_order_item_meta', array( $this, 'add_order_item_meta'), 10, 3);
+            }
+            else {
+                add_action ('woocommerce_new_order_item', array( $this, 'add_order_item_meta'), 10, 3);
+            }
+
 
             add_action('woocommerce_checkout_order_processed', array( $this, 'add_order_ticket'), 10, 1 );
 
             add_action('woocommerce_order_item_meta_start', array( $this, 'add_dates_on_order_item'), 10, 3);
             add_action('woocommerce_order_item_meta_end', array( $this, 'add_order_item_meta_display'), 10, 3);
             add_action('yith_order_item_meta_end', array( $this, 'add_view_pdf_and_gcalendar_button'), 10, 3);
-
         }
 
         /**
@@ -78,18 +87,20 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
          * @return void
          */
         public function enqueue_scripts(){
-            global $post;
+            global $post, $wp_scripts;
 
             $api_key = get_option('yith_wcte_api_key_gmaps');
+            $jquery_version = isset( $wp_scripts->registered['jquery-ui-core']->ver ) ? $wp_scripts->registered['jquery-ui-core']->ver : '1.11.4';
 
             //Register external maps script...
-            wp_register_script('yith-wc-script-gmaps', 'https://maps.googleapis.com/maps/api/js?key=' . $api_key . '&libraries=places', array(), YITH_WCEVTI_VERSION, true);
+            wp_register_script('yith-wc-script-gmaps', 'https://maps.googleapis.com/maps/api/js?key=' . $api_key . '&libraries=places', null, YITH_WCEVTI_VERSION, true);
 
             // Register frontend style
             wp_register_style( 'yith-wc-style-frontend-fontawesome-tickets', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', null, YITH_WCEVTI_VERSION);
 
             // Register frontend style
-            wp_register_style( 'yith-wc-style-frontend-event-tickets', YITH_WCEVTI_ASSETS_URL . 'css/style-frontend.css', null, YITH_WCEVTI_VERSION);
+            wp_register_style( 'jquery-ui-style', '//code.jquery.com/ui/' . $jquery_version . '/themes/smoothness/jquery-ui.min.css', array(), $jquery_version );
+            wp_register_style( 'yith-wc-style-frontend-event-tickets', YITH_WCEVTI_ASSETS_URL . 'css/style-frontend.css', array( 'jquery-ui-style' ), YITH_WCEVTI_VERSION);
 
             do_action('yith_wcevti_register_scripts');
 
@@ -103,7 +114,7 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
 
                     // Register the script (our handler, our src, our dependencies, our version)
                     wp_register_script('yith-wcevti-script-cookie', YITH_WCEVTI_ASSETS_URL . 'js-cookie/src/js.cookie.js', array(), YITH_WCEVTI_VERSION);
-                    wp_register_script('yith-wcevti-script-tickets-frontend', YITH_WCEVTI_ASSETS_URL . '/js' . $path . '/script-tickets-frontend' . $prefix . '.js', array('jquery', 'yith-wcevti-script-cookie'), YITH_WCEVTI_VERSION);
+                    wp_register_script('yith-wcevti-script-tickets-frontend', YITH_WCEVTI_ASSETS_URL . '/js' . $path . '/script-tickets-frontend' . $prefix . '.js', array('jquery', 'yith-wcevti-script-cookie', 'jquery-ui-datepicker'), YITH_WCEVTI_VERSION);
 
 
 
@@ -232,6 +243,20 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
             }
         }
 
+        /*TODO Add a Barcode checking tickets
+         * public function barcode_product_check($result, $text){
+            ob_start();
+            echo 'this is the result';
+            $rendered = ob_get_clean();
+
+            $result = $result = array(
+                'code'  => 1,
+                'value' => $rendered,
+            );
+            yith_wcevti_print_error($text);
+            return $result;
+        }*/
+
         public function event_add_to_cart(){
             //TODO For the moment...
             //Im not use yith_wcevti_get_template because simple.php template its WC template...
@@ -258,6 +283,7 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
                         '_index' => $i,
                         '_fields' => (isset($fields_customer[$i])) ? $fields_customer[$i] : array()
                     );
+
                     $product_data = apply_filters('yith_wcevti_before_add_to_cart', $product_data, $product_id);
                     if (WC()->cart->add_to_cart($product_id, 1, 0, array(), $product_data)) {
                         wc_add_to_cart_message(array($product_id => $i), false);
@@ -278,7 +304,6 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
         }
 
         public function get_item_data($item_data, $cart_item){
-
             if(isset($cart_item['_field_service'])) {
                 if (is_array($cart_item['_field_service']['_fields'])) {
                     $product = wc_get_product($cart_item['product_id']);
@@ -293,7 +318,14 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
                                             'key' => $field_data['_label'],
                                             'value' => date_i18n($format, strtotime($field['_value']))
                                         );
-                                    } else {
+                                    }
+                                    elseif('check' == $field_data['_type']){
+                                        $item_data[] = array(
+                                            'key' => $field_data['_label'],
+                                            'value' => ('on' == $field['_value'] ) ? __('Yes', 'yith-event-tickets-for-woocommerce') : __('No', 'yith-event-tickets-for-woocommerce')
+                                        );
+                                    }
+                                    else {
                                         $item_data[] = array(
                                             'key' => $field_data['_label'],
                                             'value' => $field['_value']
@@ -359,7 +391,7 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
                 $fields_customer = $_POST['_fields_customer'];
                 foreach ($fields_customer as $index_panel => $field_panel){
                     foreach ($field_panel as $index_item => $field_item){
-                        $passed_required_fields = $this->passed_item_field($field_item['_key'], $field_item['_value'] ,$fields) ? $passed_required_fields : false;
+                        $passed_required_fields = $this->passed_item_field($field_item['_key'], (isset($field_item['_value'])) ? $field_item['_value'] : '' ,$fields) ? $passed_required_fields : false;
                     }
                 }
             }
@@ -461,7 +493,6 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
                                 break;
                         }
                     }
-
                 }
             }
             return $passed;
@@ -542,7 +573,7 @@ if ( ! class_exists( 'YITH_Tickets_Frontend' ) ) {
                 $meta_items = apply_filters('yith_wcevti_add_order_item_meta_display_output', $meta_items, $item->key, $item);
             }
 
-            yith_wcevti_get_template('order_item_meta_display',array('meta_items' => $meta_items), 'frontend');
+            yith_wcevti_get_template('order_item_meta_display', array('meta_items' => $meta_items), 'frontend');
 
             do_action('yith_order_item_meta_end', $item_id, $item_meta, $order, $meta_items);
         }

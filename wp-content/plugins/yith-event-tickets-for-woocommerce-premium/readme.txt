@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: woocommerce event tickets, product tickets, product event, tickets, ticket, events, event, woocommerce product event, woocommerce product event, woo event tickets, wc event tickets, e-commerce, event ticket, event tickets, WooCommerce, WooCommerce event ticket, calendar, yit, yith, yithemes
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.1.0
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html/
 
@@ -92,6 +92,19 @@ Also abalable in:
 
 
 == Changelog ==
+
+= 1.1.2 - Released: Apr, 26 - 2017 =
+
+* Fix: Save stock services.
+
+= 1.1.1 - Released: Apr, 25 - 2017 =
+
+* New: Datepicker for date field on frontend.
+* New: Added downloaded option.
+* Tweak: Change 'overcharge' to 'surcharge' translation.
+* Fix: Saving duplicated post meta.
+* Fix: Update post meta problem for custom data.
+
 
 = 1.1.0 - Released: Mar, 9 - 2017 =
 

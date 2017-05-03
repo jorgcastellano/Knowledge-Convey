@@ -34,8 +34,6 @@ if ( ! class_exists( 'YITH_Widget_Calendar' ) ) {
             );
 
             parent::__construct( $widget_args['classname'], $widget_args['name'], $widget_args );
-
-
         }
 
 

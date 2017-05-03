@@ -53,6 +53,8 @@ jQuery(document).ready(function($){
             save_form();
         });
 
+        $( '.fields_panel' ).find('._field_datepicker').datepicker({ dateFormat: 'mm/dd/yy', changeMonth: true, changeYear: true  });
+
         var quantity = ( typeof Cookies.get('quantity') !== 'undefined' ) ? Cookies.get('quantity') : 1;
 
         $( '.quantity>input[type=number]' ).val(quantity);
@@ -254,6 +256,9 @@ jQuery(document).ready(function($){
             var $name = $(this).attr('name'),
                 re_name =  /customer\[\d+]/;
 
+            if( typeof $name === 'undefined' ){
+                return;
+            }
             $name = $name.replace(re_name, 'customer[' + row_index + ']' );
             $(this).attr('name', $name);
 
@@ -333,10 +338,13 @@ jQuery(document).ready(function($){
 
     function refresh_price_service(service_panel, overchage) {
 
-        $price_service = parseFloat($(service_panel).attr('data-price_service'));
-        $overchage = parseFloat(overchage);
+        var $price_service = parseFloat($(service_panel).attr('data-price_service'));
 
-        $total_price = parseFloat($('.yith_evti_total_price').attr('data-current_price'));
+        $price_service = (!isNaN($price_service)) ? $price_service : 0;
+
+        var $overchage = parseFloat(overchage);
+
+        var $total_price = parseFloat($('.yith_evti_total_price').attr('data-current_price'));
 
         $total_price = $total_price - $price_service;
         $total_price = $total_price + $overchage;

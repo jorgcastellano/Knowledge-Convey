@@ -1,5 +1,8 @@
 <?php
-$fields = get_post_meta($thepostid, '_fields', true);
+$product = wc_get_product($thepostid);
+
+$fields = yit_get_prop($product, '_fields', true);
+
 ?>
 <div id="fields_product_data" class="panel woocommerce_options_panel hidden">
     <div class="yith_evti_fields_title">
@@ -30,7 +33,7 @@ $fields = get_post_meta($thepostid, '_fields', true);
 				                'field' => $field_item
 			                );
 
-			                wc_get_template('admin/fields_row.php', $args, '', YITH_WCEVTI_TEMPLATE_PATH);
+                            yith_wcevti_get_template('admin/fields_row.php', $args, '', YITH_WCEVTI_TEMPLATE_PATH);
 		                }
 	                }
                 }
@@ -53,6 +56,8 @@ $fields = get_post_meta($thepostid, '_fields', true);
 </div>
 <?php
 $mail_template = get_post_meta($thepostid, '_mail_template', true);
+
+$mail_template = is_array($mail_template) ? $mail_template : array();
 
 if(!isset($mail_template['type']) | !isset($mail_template['data'])){
     $mail_template['type'] = 'default';

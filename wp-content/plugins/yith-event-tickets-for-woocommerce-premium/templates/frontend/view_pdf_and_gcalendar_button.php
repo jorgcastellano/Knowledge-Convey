@@ -16,5 +16,5 @@ $upload_dir = wp_upload_dir();
         <a href="<?php echo esc_url($file_url); ?>" class="button wc-forward" download><?php echo __('PDF', 'yith-event-tickets-for-woocommerce')?></a>
         <?php
     }?>
-    <a href="<?php echo esc_url($url_google_calendar);?>" class="button wc-forward tooltip" target="_blank"><?php echo __('Export to Google Calendar', 'yith-event-tickets-for-woocommerce')?></a>
+    <a href="<?php echo esc_url($url_google_calendar);?>" class="button wc-forward" target="_blank"><?php echo __('Export to Google Calendar', 'yith-event-tickets-for-woocommerce')?></a>
 </div>

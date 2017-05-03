@@ -1,0 +1,2 @@
+[01-May-2017 19:44:31 UTC] PHP Warning:  array_shift() expects parameter 1 to be array, null given in /home/centro68/developments/knowledgeconvey/wp-content/plugins/yith-woocommerce-minimum-maximum-quantity-premium-1-0-3/class.yith-wc-min-max-qty-premium.php on line 528
+[03-May-2017 18:38:53 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'wp_ajax_activate_plugin' not found or invalid function name in /home/centro68/developments/knowledgeconvey/wp-includes/class-wp-hook.php on line 298

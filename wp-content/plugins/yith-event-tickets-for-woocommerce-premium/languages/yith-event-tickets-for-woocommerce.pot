@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Tickets\n"
-"POT-Creation-Date: 2017-03-13 09:16+0000\n"
+"POT-Creation-Date: 2017-04-25 12:01+0100\n"
 "PO-Revision-Date: 2015-10-16 14:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,"
@@ -25,7 +25,7 @@ msgid "Event Tickets"
 msgstr ""
 
 #: includes/class.yith-event-tickets-admin-premium.php:137
-#: includes/class.yith-event-tickets-admin.php:307
+#: includes/class.yith-event-tickets-admin.php:321
 msgid "Settings"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgid "Map"
 msgstr ""
 
 #: includes/class.yith-event-tickets-admin-premium.php:250
-#: includes/class.yith-event-tickets-admin.php:354
+#: includes/class.yith-event-tickets-admin.php:368
 msgid "Fields"
 msgstr ""
 
@@ -47,78 +47,78 @@ msgid "Organizers and assistants"
 msgstr ""
 
 #: includes/class.yith-event-tickets-admin-premium.php:274
-#: includes/class.yith-event-tickets-admin.php:362
+#: includes/class.yith-event-tickets-admin.php:376
 msgid "Email template"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:92
+#: includes/class.yith-event-tickets-admin.php:94
 msgid "Plugin documentation"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:96
+#: includes/class.yith-event-tickets-admin.php:98
 msgid "Help Center"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:266
+#: includes/class.yith-event-tickets-admin.php:282
 msgid "Remove this Service?"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:324
+#: includes/class.yith-event-tickets-admin.php:338
 msgid "Plugin Documentation"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:383
+#: includes/class.yith-event-tickets-admin.php:397
 #: templates/admin/edit_template_default.php:25
 msgid "Ticket"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:384
+#: includes/class.yith-event-tickets-admin.php:398
 #: templates/admin/edit_template_default.php:27
 msgid "Order"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:385
+#: includes/class.yith-event-tickets-admin.php:399
 msgid "Place"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:386
+#: includes/class.yith-event-tickets-admin.php:400
 msgid "Purchase date"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:387
+#: includes/class.yith-event-tickets-admin.php:401
 msgid "Start/End event"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:417
+#: includes/class.yith-event-tickets-admin.php:431
 msgid "by"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:419
+#: includes/class.yith-event-tickets-admin.php:433
 msgid "Unregistered user"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:423
+#: includes/class.yith-event-tickets-admin.php:437
 msgid "The order linked to this event has been deleted..."
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:431
+#: includes/class.yith-event-tickets-admin.php:445
 msgid "No location has been defined for this event"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:453
+#: includes/class.yith-event-tickets-admin.php:467
 msgid "No start or end date has been defined for this event"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:455
+#: includes/class.yith-event-tickets-admin.php:469
 msgid "to"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:502
+#: includes/class.yith-event-tickets-admin.php:515
 #, php-format
 msgid "Event #%d %s details"
 msgstr ""
 
-#: includes/class.yith-event-tickets-admin.php:506
+#: includes/class.yith-event-tickets-admin.php:519
 msgid "Ticket template"
 msgstr ""
 
@@ -181,6 +181,7 @@ msgstr ""
 #: includes/class.yith-event-tickets-frontend-premium.php:408
 #: includes/class.yith-event-tickets-frontend-premium.php:443
 #: includes/class.yith-event-tickets-frontend-premium.php:479
+#: includes/class.yith-event-tickets-frontend.php:325
 msgid "Yes"
 msgstr ""
 
@@ -194,92 +195,93 @@ msgid "Reduced price activated"
 msgstr ""
 
 #: includes/class.yith-event-tickets-frontend-premium.php:443
+#: includes/class.yith-event-tickets-frontend.php:325
 msgid "No"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:117
+#: includes/class.yith-event-tickets-frontend.php:128
 #: templates/admin/date_fields.php:5
 msgid "Start date"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:118
+#: includes/class.yith-event-tickets-frontend.php:129
 #: templates/admin/date_fields.php:17
 msgid "End date"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:121
-#: includes/class.yith-event-tickets-frontend.php:123
+#: includes/class.yith-event-tickets-frontend.php:132
+#: includes/class.yith-event-tickets-frontend.php:134
 msgid "Complete"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:122
+#: includes/class.yith-event-tickets-frontend.php:133
 msgid "Need to fill one or more of the above fields"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:124
+#: includes/class.yith-event-tickets-frontend.php:135
 msgid "Incomplete"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:125
+#: includes/class.yith-event-tickets-frontend.php:136
 msgid "Incorrect email format"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:126
+#: includes/class.yith-event-tickets-frontend.php:137
 msgid "Incorrect number format"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:127
+#: includes/class.yith-event-tickets-frontend.php:138
 msgid "Incorrect date format"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:128
+#: includes/class.yith-event-tickets-frontend.php:139
 msgid "Are you sure you want to delete"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:129
+#: includes/class.yith-event-tickets-frontend.php:140
 msgid "tickets"
 msgstr ""
 
-#: includes/class.yith-event-tickets-frontend.php:130
+#: includes/class.yith-event-tickets-frontend.php:141
 msgid "ticket"
-msgstr ""
-
-#: includes/class.yith-event-tickets-frontend.php:411
-#, php-format
-msgid "The required text field \"%s\" is empty."
-msgstr ""
-
-#: includes/class.yith-event-tickets-frontend.php:418
-#, php-format
-msgid "The required textarea field \"%s\" is empty."
-msgstr ""
-
-#: includes/class.yith-event-tickets-frontend.php:425
-#, php-format
-msgid "The required email field \"%s\" is empty."
-msgstr ""
-
-#: includes/class.yith-event-tickets-frontend.php:431
-#, php-format
-msgid "The format of the email address entered for \"%s\" is not correct."
-msgstr ""
-
-#: includes/class.yith-event-tickets-frontend.php:439
-#, php-format
-msgid "The required field \"%s\" is empty."
 msgstr ""
 
 #: includes/class.yith-event-tickets-frontend.php:443
 #, php-format
-msgid "The required field \"%s\" must be a number."
+msgid "The required text field \"%s\" is empty."
 msgstr ""
 
 #: includes/class.yith-event-tickets-frontend.php:450
 #, php-format
-msgid "The required date \"%s\" is empty."
+msgid "The required textarea field \"%s\" is empty."
 msgstr ""
 
 #: includes/class.yith-event-tickets-frontend.php:457
+#, php-format
+msgid "The required email field \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:463
+#, php-format
+msgid "The format of the email address entered for \"%s\" is not correct."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:471
+#, php-format
+msgid "The required field \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:475
+#, php-format
+msgid "The required field \"%s\" must be a number."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:482
+#, php-format
+msgid "The required date \"%s\" is empty."
+msgstr ""
+
+#: includes/class.yith-event-tickets-frontend.php:489
 #, php-format
 msgid "The date format entered for \"%s\" is not correct."
 msgstr ""
@@ -292,27 +294,27 @@ msgstr ""
 msgid "Organizers"
 msgstr ""
 
-#: includes/class.yith-event-tickets.php:173
+#: includes/class.yith-event-tickets.php:172
 msgctxt "product type in Edit product page"
 msgid "Event Ticket"
 msgstr ""
 
-#: includes/class.yith-event-tickets.php:202
+#: includes/class.yith-event-tickets.php:201
 msgctxt "Handle purchased tickets on your shop"
+msgid "Purchased tickets"
+msgstr ""
+
+#: includes/class.yith-event-tickets.php:202
+msgctxt "Purchased tickets"
 msgid "Purchased tickets"
 msgstr ""
 
 #: includes/class.yith-event-tickets.php:203
 msgctxt "Purchased tickets"
-msgid "Purchased tickets"
-msgstr ""
-
-#: includes/class.yith-event-tickets.php:204
-msgctxt "Purchased tickets"
 msgid "Tickets"
 msgstr ""
 
-#: includes/class.yith-event-tickets.php:205
+#: includes/class.yith-event-tickets.php:204
 msgid "Edit Ticket"
 msgstr ""
 
@@ -332,20 +334,20 @@ msgstr ""
 msgid "You are trying to add more services than available!"
 msgstr ""
 
-#: includes/functions.yith-wcevti.php:46 templates/frontend/services_row.php:72
+#: includes/functions.yith-wcevti.php:47 templates/frontend/services_row.php:72
 #: templates/frontend/services_row.php:87
 msgid "Free"
 msgstr ""
 
-#: includes/functions.yith-wcevti.php:203
+#: includes/functions.yith-wcevti.php:213
 msgid "Start"
 msgstr ""
 
-#: includes/functions.yith-wcevti.php:204
+#: includes/functions.yith-wcevti.php:214
 msgid "at"
 msgstr ""
 
-#: includes/functions.yith-wcevti.php:205
+#: includes/functions.yith-wcevti.php:215
 msgid "Finish"
 msgstr ""
 
@@ -452,7 +454,19 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: templates/admin/fields_row.php:27 templates/admin/increase_stock_row.php:41
+#: templates/admin/fields_row.php:20
+#: templates/admin/product_data_content_premium.php:70
+#: templates/admin/service_row.php:25 templates/admin/service_row.php:47
+msgid "Select"
+msgstr ""
+
+#: templates/admin/fields_row.php:21
+#: templates/admin/product_data_content_premium.php:69
+#: templates/admin/service_row.php:24 templates/admin/service_row.php:46
+msgid "Checkbox"
+msgstr ""
+
+#: templates/admin/fields_row.php:34 templates/admin/increase_stock_row.php:41
 #: templates/admin/increase_time_row.php:42
 #: templates/admin/select_service_row.php:58 templates/admin/service_row.php:29
 msgid "Remove"
@@ -494,7 +508,7 @@ msgstr ""
 
 #: templates/admin/increase_stock_section.php:22
 #: templates/admin/increase_time_section.php:16
-#: templates/admin/product_data_content.php:16
+#: templates/admin/product_data_content.php:19
 #: templates/admin/service_row.php:23
 msgid "Type"
 msgstr ""
@@ -506,7 +520,7 @@ msgstr ""
 
 #: templates/admin/increase_stock_section.php:24
 #: templates/admin/increase_time_section.php:18
-#: templates/admin/product_data_content.php:18
+#: templates/admin/product_data_content.php:21
 #: templates/admin/service_row.php:99
 msgid "Actions"
 msgstr ""
@@ -548,33 +562,33 @@ msgstr ""
 msgid "Find and add users that will contribute to the event organization"
 msgstr ""
 
-#: templates/admin/product_data_content.php:6
+#: templates/admin/product_data_content.php:9
 msgid "Add custom fields on the tickets for this event"
 msgstr ""
 
-#: templates/admin/product_data_content.php:15
+#: templates/admin/product_data_content.php:18
 #: templates/admin/service_row.php:94
 msgid "Name"
 msgstr ""
 
-#: templates/admin/product_data_content.php:17
+#: templates/admin/product_data_content.php:20
 msgid "Required"
 msgstr ""
 
-#: templates/admin/product_data_content.php:45
+#: templates/admin/product_data_content.php:48
 #: templates/admin/service_row.php:125
 msgid "Add option"
 msgstr ""
 
-#: templates/admin/product_data_content.php:66
+#: templates/admin/product_data_content.php:71
 msgid "Email template for your event"
 msgstr ""
 
-#: templates/admin/product_data_content.php:70
+#: templates/admin/product_data_content.php:75
 msgid "Type of template"
 msgstr ""
 
-#: templates/admin/product_data_content.php:74
+#: templates/admin/product_data_content.php:79
 msgid "Default"
 msgstr ""
 
@@ -607,16 +621,6 @@ msgstr ""
 #: templates/admin/product_data_content_premium.php:64
 #: templates/admin/product_data_content_premium.php:65
 msgid "Add service"
-msgstr ""
-
-#: templates/admin/product_data_content_premium.php:69
-#: templates/admin/service_row.php:24 templates/admin/service_row.php:46
-msgid "Checkbox"
-msgstr ""
-
-#: templates/admin/product_data_content_premium.php:70
-#: templates/admin/service_row.php:25 templates/admin/service_row.php:47
-msgid "Select"
 msgstr ""
 
 #: templates/admin/product_data_content_premium.php:72
@@ -668,7 +672,7 @@ msgid "Service stock"
 msgstr ""
 
 #: templates/admin/service_row.php:66
-msgid "Service Overcharge"
+msgid "Service Surcharge"
 msgstr ""
 
 #: templates/admin/service_row.php:76
@@ -676,7 +680,7 @@ msgid "Service required"
 msgstr ""
 
 #: templates/admin/service_row.php:96
-msgid "Overcharge"
+msgid "Surcharge"
 msgstr ""
 
 #: templates/admin/service_row.php:97
@@ -704,7 +708,7 @@ msgid "Remove this ticket"
 msgstr ""
 
 #: templates/frontend/services_row.php:31
-msgid "overcharge"
+msgid "surcharge"
 msgstr ""
 
 #: templates/frontend/services_row.php:63
@@ -765,10 +769,10 @@ msgstr ""
 msgid "Display events from Event Tickets..."
 msgstr ""
 
-#: widgets/class.yith-event-tickets-widget-calendar.php:43
+#: widgets/class.yith-event-tickets-widget-calendar.php:41
 msgid "Calendar Event Tickets"
 msgstr ""
 
-#: widgets/class.yith-event-tickets-widget-calendar.php:68
+#: widgets/class.yith-event-tickets-widget-calendar.php:66
 msgid "Title"
 msgstr ""

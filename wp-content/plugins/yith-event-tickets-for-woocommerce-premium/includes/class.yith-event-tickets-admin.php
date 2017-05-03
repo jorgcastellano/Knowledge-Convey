@@ -55,8 +55,11 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
             add_action('woocommerce_product_options_general_product_data', array( $this, 'add_date_fields'), 10, 3 );
 
             /* === Save my custom fields === */
-            add_action('woocommerce_process_product_meta_ticket-event', array($this, 'save_custom_fields'), 10, 3);
-
+            if( version_compare( WC()->version, '3.0.0', '<' ) ){
+                add_action('woocommerce_process_product_meta_ticket-event', array($this, 'save_custom_fields'), 10, 3);
+            } else {
+                add_action('woocommerce_admin_process_product_object', array($this, 'save_custom_fields'), 10, 3);
+            }
             /* === Add my custom scripts === */
             add_action( 'admin_enqueue_scripts', array($this, 'enqueue_scripts' ));
 
@@ -76,7 +79,6 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
             add_filter( 'manage_ticket_posts_columns', array($this, 'add_columns_ticket'), 10, 1);
             add_action( 'manage_ticket_posts_custom_column', array($this, 'render_ticket_custom_columns'), 10, 2 );
             add_action( 'pre_get_posts', array($this, 'search_ticket_for_place'));
-
         }
 
         /**
@@ -130,24 +132,31 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
         public function save_custom_fields( $post_id ){
 
             $product = wc_get_product($post_id);
-
+            //$changes = array();
             //*** Save Start and End Event Data ***
             $start_date_picker_field = $_POST['_start_date_picker_field'];
+
+            //$changes['_start_date_picker'] = esc_attr( $start_date_picker_field );
 
             yit_save_prop( $product, '_start_date_picker', esc_attr( $start_date_picker_field ) );
 
             $start_time_picker_field = $_POST['_start_time_picker_field'];
 
+            //$changes['_start_time_picker'] = esc_attr( $start_time_picker_field );
+
             yit_save_prop($product, '_start_time_picker', esc_attr( $start_time_picker_field ) );
 
             $end_date_picker_field = $_POST['_end_date_picker_field' ];
+
+            //$changes['_end_date_picker'] = esc_attr( $end_date_picker_field );
 
             yit_save_prop($product, '_end_date_picker', esc_attr( $end_date_picker_field) );
 
             $end_time_picker_field = $_POST['_end_time_picker_field'];
 
-            yit_save_prop($product, '_end_time_picker', esc_attr( $end_time_picker_field ) );
+            //$changes['_end_time_picker'] = esc_attr( $end_time_picker_field );
 
+            yit_save_prop($product, '_end_time_picker', esc_attr( $end_time_picker_field ) );
 
             //*** Save fields ***
             if(isset($_POST['_fields']) && !empty($_POST['_fields'])){
@@ -159,9 +168,12 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                         $fields[] = $field_item;
                     }
                 }
+
+                $changes ['_fields'] = $fields;
                 yit_save_prop($product, '_fields', $fields);
 
             } else {
+                $changes ['_fields'] = '';
                 yit_save_prop($product, '_fields', '');
             }
 
@@ -220,12 +232,16 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                             'type' => $template_type,
                             'data' => $data
                         );
+
+                        //$changes['_mail_template'] = $mail_template;
+
                         yit_save_prop($product, '_mail_template', $mail_template);
 
                         break;
                 }
             }
-
+            //$changes = apply_filters('yith_wcevti_save_custom_fields', $changes, $product);
+            yit_save_prop($product, $changes);
             do_action('yith_wcevti_save_custom_fields', $post_id);
 
         }
@@ -290,8 +306,6 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                 wp_register_style( 'yith-wc-style-admin-tickets-table', YITH_WCEVTI_ASSETS_URL . 'css/style-admin-tickets-table.css', null, YITH_WCEVTI_VERSION);
                 wp_enqueue_style('yith-wc-style-admin-tickets-table');
             }
-
-
         }
 
         /**
@@ -331,7 +345,7 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
                 $args = array(
                     'index' => $_POST['index']
                 );
-                wc_get_template('admin/fields_row.php', $args, '', YITH_WCEVTI_TEMPLATE_PATH);
+                yith_wcevti_get_template('fields_row', $args, 'admin', YITH_WCEVTI_TEMPLATE_PATH);
             }
             die();
         }
@@ -374,7 +388,7 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
             $args = array(
                 'thepostid' => $thepostid
             );
-            wc_get_template('admin/product_data_content.php', $args, '', YITH_WCEVTI_TEMPLATE_PATH);
+            yith_wcevti_get_template('product_data_content', $args, 'admin', YITH_WCEVTI_TEMPLATE_PATH);
         }
 
         public function add_columns_ticket($columns){
@@ -457,7 +471,6 @@ if ( ! class_exists( 'YITH_Tickets_Admin' ) ) {
 
                     break;
             }
-
         }
 
         public function search_ticket_for_place(){

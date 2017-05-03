@@ -123,6 +123,7 @@ if ( ! function_exists( 'yith_wcevti_add_service_sold' ) ) {
     function yith_wcevti_add_service_sold($post_id, $service)
     {
         global $wpdb;
+        $product = wc_get_product($post_id);
 
         //Check if select service...
         if (!empty($service['_label'])) {
@@ -131,14 +132,17 @@ if ( ! function_exists( 'yith_wcevti_add_service_sold' ) ) {
 
                 case 'select':
                     if (!empty($service['_value'][sanitize_title($service['_label'])])) {
+
                         //Get the count of the current services added for index...
                         $querycount = 'select count(meta_value) from ' . $wpdb->postmeta .
                             ' where meta_key like "_service_' . $service['_label'] . '_%range"
                                                     and post_id =' . $post_id;
                         $count = $wpdb->get_var($querycount);
 
-                        update_post_meta($post_id, '_service_' . $service['_label'] . '_' . $count++ . '_range', $service['_value'][sanitize_title($service['_label'])]);
+                        yit_save_prop($product, '_service_' . $service['_label'] . '_' . $count++ . '_range', $service['_value'][sanitize_title($service['_label'])]);
+                        //update_post_meta($post_id, '_service_' . $service['_label'] . '_' . $count++ . '_range', $service['_value'][sanitize_title($service['_label'])]);
                     } else {
+
                         //Behavior simple select just the same than checkbox service.
                         add_check_service_sold($post_id, $service);
                     }
@@ -157,6 +161,7 @@ if ( ! function_exists( 'add_check_service_sold' ) ) {
     function add_check_service_sold($post_id, $service)
     {
         global $wpdb;
+        $product = wc_get_product($post_id);
 
         //Get the value check service, this will contain the current check service buyed...
         $querycheck = 'select meta_value from ' . $wpdb->postmeta .
@@ -169,7 +174,9 @@ if ( ! function_exists( 'add_check_service_sold' ) ) {
             $check_stock = 0;
         }
         $check_stock = $check_stock + $service['_quantity'];
-        update_post_meta($post_id, '_service_' . $service['_label'] . '_range', $check_stock);
+
+        yit_save_prop($product, '_service_' . $service['_label'] . '_range', $check_stock );
+        //update_post_meta($post_id, '_service_' . $service['_label'] . '_range', $check_stock);
     }
 }
 if ( ! function_exists( 'yith_wcevti_count_services_cart' ) ) {
@@ -320,6 +327,7 @@ if ( ! function_exists( 'yith_wcevti_check_current_stock_service' ) ) {
     {
         global $wpdb;
         $value = $service['_value'];
+
         switch ($service['_type']) {
             case 'select':
                 if (!isset($service['_simple'])) {
@@ -501,10 +509,18 @@ if ( ! function_exists( 'yith_wcevti_get_services' ) ) {
     {
         $post_meta = get_post_meta($post->ID, '', true);
 
+        if( version_compare( WC()->version, '3.0.0', '<' ) ){
+            $item_meta = $post_meta;
+        } else {
+            $item_meta = wc_get_order_item_meta( $post_meta['wc_order_item_id'][0], '', $single = true );
+        }
+
         $services = array();
-        foreach ($post_meta as $key => $meta){
+        foreach ($item_meta as $key => $meta){
             if (preg_match('/service_/i', $key)) {
                 $label = str_replace( array( 'service_' ), '', $key );
+                $label = str_replace( array( '_' ), '', $label );
+
                 $value = $meta[0];
 
                 $services[] = array(
@@ -515,15 +531,15 @@ if ( ! function_exists( 'yith_wcevti_get_services' ) ) {
         return $services;
     }
 }
-
-add_filter('yith_wcevti_set_custom_mail_args', 'set_services_location_mail_args', 10, 2);
+add_filter('yith_wcevti_set_custom_mail_args', 'set_services_location_mail_args', 10, 3);
 if ( ! function_exists( 'set_services_location_mail_args' ) ) {
-    function set_services_location_mail_args($args, $post_meta)
+    function set_services_location_mail_args($args, $post_meta, $item_meta)
     {
         $services = array();
-        foreach ($post_meta as $key => $meta){
+        foreach ($item_meta as $key => $meta){
             if (preg_match('/service_/i', $key)) {
                 $label = str_replace( array( 'service_' ), '', $key );
+                $label = str_replace( array( '_' ), '', $label );
                 $value = $meta[0];
 
                 $services[] = array(

@@ -42,12 +42,15 @@ load_textdomain( 'yith-plugin-fw', get_template_directory() . '/core/plugin-fw/y
 // ...or from plugin folder
 || load_textdomain( 'yith-plugin-fw', dirname(__FILE__) . '/languages/yith-plugin-fw-' . apply_filters( 'plugin_locale', get_locale(), 'yith-plugin-fw' ) . '.mo' );
 
-if( apply_filters( 'yit_fw_wc_update_message_hook', true )
+/* === WooCommerce Update Message === */
+
+/*if( apply_filters( 'yit_fw_wc_update_message_hook', true )
     &&
     ( function_exists( 'WC' ) && ! version_compare( WC()->version, '2.7', '>=' ) )
     && ! isset( $_COOKIE['yith_wc_2_7_notice'] )
 ){
     add_action( 'admin_notices', 'yit_fw_wc_update_message', 15 );
+    add_action( 'admin_enqueue_scripts', 'yit_plugin_fw_dismissable_notice', 20 );
 
     if( ! function_exists( 'yit_fw_wc_update_message' ) ){
         function yit_fw_wc_update_message(){
@@ -60,8 +63,6 @@ if( apply_filters( 'yit_fw_wc_update_message_hook', true )
             <?php
         }
     }
-
-    add_action( 'admin_enqueue_scripts', 'yit_plugin_fw_dismissable_notice', 20 );
 
     if( ! function_exists( 'yit_plugin_fw_dismissable_notice' ) ){
         function yit_plugin_fw_dismissable_notice(){
@@ -76,4 +77,6 @@ if( apply_filters( 'yit_fw_wc_update_message_hook', true )
             wp_add_inline_script( 'jquery-cookie', $js );
         }
     }
-}
+}*/
+
+/* ========================== */

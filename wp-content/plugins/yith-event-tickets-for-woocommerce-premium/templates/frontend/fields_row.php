@@ -120,16 +120,35 @@
                         <input type="hidden" style=""
                                name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_label]"
                                value="<?php echo $field['_label']; ?>">
-                        <input type="date" class="_field_item" style=""
+                        <input type="text" class="_field_item _field_datepicker" style=""
                                name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_value]"
                                id="_fields_customer_<?php echo $row ?>_<?php echo $label; ?>"
-                               value="" placeholder="dd/mm/aaaa" <?php if (isset($field['_required'])) {
+                               value="" placeholder="mm/dd/aaaa" <?php if (isset($field['_required'])) {
                             if ('on' == $field['_required']) {
                                 echo 'required';
                             }
                         } ?>>
                     </p>
                     <?php
+                    break;
+                case 'check':
+                    ?>
+                    <p class="form-field field_item check_item _fields_customer_<?php echo $label; ?>_field">
+                        <input type="hidden" style=""
+                               name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_key]"
+                               value="<?php echo $label; ?>">
+                        <input type="hidden" style=""
+                               name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_label]"
+                               value="<?php echo $field['_label']; ?>">
+                        <input type="checkbox" class="checkbox" style=""
+                               name="_fields_customer[<?php echo $row ?>][<?php echo $index ?>][_value]"
+                               id="_fields_customer_<?php echo $label; ?>">
+                        <label for="_fields_customer_<?php echo $row ?>_<?php echo $label; ?>"><?php echo $field['_label']; ?></label>
+                    </p>
+                    <?php
+
+                default:
+                    do_action( 'yith_wcevti_custom_field', $field, $index, $row, $label );
                     break;
             }
         }
