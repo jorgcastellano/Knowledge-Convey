@@ -12,3 +12,4 @@
 [2017-04-20 16:00:00] WARNING: Registration Form > emai*@jo************.xyz is already subscribed to the selected list(s)
 [2017-04-20 19:14:24] WARNING: Registration Form > emai*@jo************.xyz is already subscribed to the selected list(s)
 [2017-04-20 19:15:42] WARNING: Registration Form > emai*@jo************.xyz is already subscribed to the selected list(s)
+[2017-05-08 20:21:19] ERROR: Registration Form > MailChimp API Error: Not Found. The requested resource could not be found.

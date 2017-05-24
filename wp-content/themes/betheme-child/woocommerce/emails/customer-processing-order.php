@@ -1,3 +1,8 @@
+<style>
+._view_and_pdf_row a:first-child {
+	display: none;
+}
+</style>
 <?php
 /**
  * Customer processing order email

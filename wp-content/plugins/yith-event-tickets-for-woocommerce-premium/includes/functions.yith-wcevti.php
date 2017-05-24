@@ -161,14 +161,15 @@ function yith_wcevti_get_pdf_url($id_ticket){
 }
 
 function yith_wcevti_get_google_calendar_link ($id_product){
-    $title = str_replace(' ', '+', get_the_title($id_product));
+    $post = get_post($id_product);
+    $title = urlencode($post->post_title);
+
     $start_date = str_replace('-', '', get_post_meta($id_product, '_start_date_picker', true));
     $start_time = str_replace(':', '', get_post_meta($id_product, '_start_time_picker', true));
     $end_date = str_replace('-', '', get_post_meta($id_product, '_end_date_picker', true));
     $end_time = str_replace(':', '', get_post_meta($id_product, '_end_time_picker', true));
-    $description =str_replace(' ', '+', get_post_field('post_content', $id_product));
+    $description = urlencode( wp_strip_all_tags( get_post_field('post_content', $id_product)));
     $direction =str_replace(' ', '+',  get_post_meta($id_product, '_direction_event', true));
-
     $text = '';
     if(!empty($title)){
         $text = '&text='. $title;
@@ -176,6 +177,8 @@ function yith_wcevti_get_google_calendar_link ($id_product){
 
     $dates = '';
     if(!empty($start_date) & !empty($end_date)){
+        $start_time = (strlen($start_time) <= 3) ? '0' . $start_time : $start_time;
+        $end_time = (strlen($end_time) <= 3) ? '0' . $end_time : $end_time;
 
         if(!empty($start_time) & !empty($end_time)) {
             $dates = '&dates='.$start_date . 'T' . $start_time . '00Z/' . $end_date . 'T' . $end_time . '00Z';
@@ -195,7 +198,6 @@ function yith_wcevti_get_google_calendar_link ($id_product){
     }
 
     $link = 'https://calendar.google.com/calendar/render?action=TEMPLATE' . $text . $dates  . $details . $location . '&sf=true&output=xml';
-
     return $link;
 }
 
